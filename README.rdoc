@@ -1,28 +1,9 @@
-== README
+Users can create workout plans and run workout plans to track workouts during the workout.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+They can also share their workout plans with others.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+User:    Associations
+Workout:   has_many exercise , description, rest periods, type
+Exercise:  name, has_many workouts , repetitions, reps
+Tutorials: name, links
