@@ -1,9 +1,18 @@
 Users can create workout plans and run workout plans to track workouts during the workout.
 
 They can also share their workout plans with others.
+Coaches can edit student's workout plan.
 
+User:    Associations, username, role
+  has admin, coach, user
+Plan: Has_many_workout plans
+start_date, end_date, description, name
+Jointable(Workout_Plan): belongs to Plan, belongs to workout
+Workout:
+has_many exercises name, description, type(upper lower etc)
+Exercise: belongs to user.
+name, has_many workouts, reps, rest period, description, muscle_group(biceps etc),
 
-User:    Associations
-Workout:   has_many exercise , description, rest periods, type
-Exercise:  name, has_many workouts , repetitions, reps
-Tutorials: name, links
+1. Create models and associations
+2.Auto complete for muscle groups for exercises and type of workouts.
+3. Search for video on youtube and pic for muscle group automatically for exercises
