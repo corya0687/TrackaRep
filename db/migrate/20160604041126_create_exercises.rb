@@ -4,8 +4,9 @@ class CreateExercises < ActiveRecord::Migration
       t.string :name
       t.string :descrition
       t.integer :reps
+      t.integer :author_id
       t.integer :rest_period
-      t.string :muscle_group
+      t.string :target_muscle
       t.string :equipment_needed
 
       t.timestamps null: false

@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   enum role: [:user, :coach, :admin]
 
-  has_many :exercises
+  has_many :exercises, :foreign_key => 'author_id'
   has_many :plans
   has_many :workouts, through: :plans
+
 
 end

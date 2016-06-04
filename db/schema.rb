@@ -11,17 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604042320) do
+ActiveRecord::Schema.define(version: 20160604154237) do
+
+  create_table "exercise_target_muscles", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "target_muscle_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.string   "descrition"
     t.integer  "reps"
+    t.integer  "author_id"
     t.integer  "rest_period"
-    t.string   "muscle_group"
+    t.string   "target_muscle"
     t.string   "equipment_needed"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "muscle_groups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plans", force: :cascade do |t|
@@ -31,6 +45,12 @@ ActiveRecord::Schema.define(version: 20160604042320) do
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "target_muscles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +73,20 @@ ActiveRecord::Schema.define(version: 20160604042320) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+  create_table "workout_exercises", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "workout_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "workout_muscle_groups", force: :cascade do |t|
+    t.integer  "workout_id"
+    t.integer  "muscle_group_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "workout_plans", force: :cascade do |t|
     t.integer  "plan_id"
     t.integer  "workout_id"
@@ -63,9 +97,9 @@ ActiveRecord::Schema.define(version: 20160604042320) do
   create_table "workouts", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "muscle_group"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
