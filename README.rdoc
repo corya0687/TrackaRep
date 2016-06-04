@@ -1,28 +1,30 @@
-== README
+Users can create workout plans and run workout plans to track workouts during the workout.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+They can also share their workout plans with others.
+Coaches can edit student's workout plan.
 
-Things you may want to cover:
+User:    Associations, username, role
+  has admin, coach, user
+Plan: Has_many_workout plans
+start_date, end_date, description, name
+Jointable(Workout_Plan): belongs to Plan, belongs to workout
+Workout:
+has_many exercises name, description, type(upper lower etc)
+Exercise: belongs to user.
+name, has_many workouts, reps, rest period, description, muscle_group(biceps etc),
 
-* Ruby version
+Permissions -
+All Exercises are default viewable.
+Admin can manage all resources
+Coaches can edit user plans where they have been added as a coach,
+ Only author, admins and user coaches can edit exercises.
 
-* System dependencies
+1. ###Create models and associations###
+Auto complete for muscle groups for exercises and type of workouts.
 
-* Configuration
+2.### Setup login/log out/sign up, home page and profile.###
 
-* Database creation
+3. ###Setup exercise controller and views- Allow full crud on### exercises.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Search for video on youtube and pic for muscle group automatically for exercises
+Let user build custom workout with drop downs
