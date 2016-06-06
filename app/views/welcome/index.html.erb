@@ -1,1 +1,16 @@
 <h1>Get Yoked!</h1>
+<div class="col-md-4">
+  <h3>Latest Exercises </h3>
+  <%=render partial: "exercises/exercise", collection: @exercises%>
+  <%= link_to "New Exercise", new_exercise_path %>
+
+</div>
+<div class="col-md-4">
+  <h3>Latest Workouts </h3>
+  <%=render "workouts/workout", collection: @workouts%>
+</div>
+
+<div class="col-md-4">
+  <h3>Latest Plans</h3>
+  <%=render "plans/plan", collection: @plans%>
+</div>
