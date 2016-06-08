@@ -39,3 +39,8 @@ press.target_muscles << chest
 pushdown = Exercise.create(name: "Tricep Pushdown", description: "Standing", reps: 8, author_id: 2, rest_period: 90, equipment_needed: "Pulley")
 
 pushdown.target_muscles << traps
+
+
+MuscleGroup.create(name: "UpperBody")
+MuscleGroup.create(name: "LowerBody")
+MuscleGroup.create(name: "Core")

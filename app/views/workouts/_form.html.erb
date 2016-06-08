@@ -1,0 +1,9 @@
+<%=f.text_field :name%>
+<%=f.text_field :description%>
+<%=f.hidden_field :author_id, :value => current_user.id%>
+<%= f.collection_check_boxes :muscle_group_ids, MuscleGroup.all, :id, :name, label: "Muscle Groups"%>
+<%= f.collection_check_boxes :exercise_ids, Exercise.all, :id, :name, label: "Choose from Existing Exercises" %>
+<%=f.fields_for :exercise_attributes, Exercise.new do |exercise_attribute|%>
+<%=exercise_attribute.text_field :name%>
+<%end%>
+<%=f.submit %>

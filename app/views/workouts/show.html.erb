@@ -1,0 +1,13 @@
+<%=render partial: "workout", locals: {workout:@workout}%>
+<%=@workout.description%> <br>
+<table class= "table-bordered">
+  <tr>
+    <th>Exercise</th> <th>Num of Reps</th> <th>Weight</th>
+  </tr>
+<%@workout.exercises.each do |exercise|%>
+<tr>
+<td><%=exercise.name%></td><td><%=exercise.reps%></td> <td><%="#{exercise.percentage_to_max} of 1 rep max"%></td>
+<td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
+</tr>
+<%end%>
+</table>

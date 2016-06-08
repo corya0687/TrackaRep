@@ -3,5 +3,7 @@
 <%=f.text_field :reps%>
 <%=f.text_field :rest_period%>
 <%=f.text_field :equipment_needed%>
+<%=f.hidden_field :author_id, :value => current_user.id%>
 <%= f.collection_check_boxes :target_muscle_ids, TargetMuscle.all, :id, :name, label: "Target Muscles"%>
+
 <%=f.submit%>

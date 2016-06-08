@@ -1,0 +1,10 @@
+<tr>
+  <td><%= workout.name %></td>
+  <td> ~ <%= workout.author.username %></td>
+  <td><%= link_to "View", workout %></td>
+  <td><%= link_to "Edit", edit_workout_path(workout)%></td>
+  <td><%= link_to "Remove", workout_path(workout), method: :delete, data: { confirm: "Are you sure?" } %></td>
+</tr>
+</table>
+
+<br>

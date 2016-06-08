@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <header>
+  <div class="page-header">
+    <h1><small>Manage workouts and exercises</small></h1>
+  </div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -15,8 +18,13 @@
     </div>
   </nav>
 </header>
-<body>
 
+
+
+<body>
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
 <%= yield %>
 
 </body>
