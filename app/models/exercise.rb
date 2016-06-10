@@ -4,6 +4,12 @@ class Exercise < ActiveRecord::Base
   has_many :exercise_target_muscles
   has_many :target_muscles, :through => :exercise_target_muscles
 
+  validates :name, presence: true, length: { minimum: 2, maximum: 60 }
+  validates :description, presence: true, length: { minimum: 8, maximum: 100 }
+  validates :reps, numericality: { only_integer: true }
+  validates :rest_period, numericality: { only_integer: true }
+  validates :sets, numericality: { only_integer: true }
+
   def percentage_to_max
       "#{coefficents[self.reps]}%"
   end

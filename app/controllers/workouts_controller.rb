@@ -1,10 +1,12 @@
 class WorkoutsController < ApplicationController
   before_filter :set_workout, :except => [:index, :new, :create]
   def index
-
+    @workouts = Workout.all
   end
 
   def show
+    @comment = Comment.new
+    @comments = @workout.comments
   end
 
   def new
@@ -13,8 +15,12 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.new(workout_params)
-    @workout.save
-    redirect_to workout_path(@workout)
+    if @workout.valid?
+      @workout.save
+      redirect_to workout_path(@workout)
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -22,8 +28,12 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    @workout.update(workout_params)
-    redirect_to workout_path(@workout)
+    if @workout.valid?
+      @workout.update(workout_params)
+      redirect_to workout_path(@exercise)
+    else
+      render "edit"
+    end
   end
 
   def destroy

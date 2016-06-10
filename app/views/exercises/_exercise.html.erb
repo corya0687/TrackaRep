@@ -1,13 +1,12 @@
+<table class="table table-striped">
 
+  <tr >
+    <%= exercise.name %> ~ added by: <%= exercise.author.username %> || Rating-<%=exercise.rating%>/10 ||(<%= link_to "View", exercise %>)
+  </tr>
   <tr>
-    <td><%= exercise.name %></td>
-    <%if !exercise.author.nil?%>
-    <td> ~ <%= exercise.author.username %></td>
-    <%end%>
-    <td><%= link_to "View", exercise %></td>
-    <td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
-    <td><%= link_to "Remove", exercise, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    <td>Sets</td> <td>Reps</td> <td>Rest Period</td> <td>Weight</td>
+  </tr>
+  <tr>
+    <td><%=exercise.sets%></td><td><%=exercise.reps%></td><td><%=exercise.rest_period%></td><td><%=exercise.percentage_to_max%> of 1 rep max</td>
   </tr>
 </table>
-
-<br>

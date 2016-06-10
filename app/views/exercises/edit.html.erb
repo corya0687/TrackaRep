@@ -3,5 +3,7 @@
   <div class="panel_body">
     <%=bootstrap_form_for(@exercise) do |f|%>
     <%=render partial: "form", locals: {f:f}%>
+    <%=f.text_field :rating, label: "Rate 1-10"%>
+    <%=f.submit%>
     <%end%>
   </div>

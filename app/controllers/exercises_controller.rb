@@ -12,17 +12,25 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = Exercise.new(exercise_params)
-    @exercise.save
-    redirect_to exercise_path(@exercise)
+    if @exercise.valid?
+      @exercise.save
+      redirect_to exercise_path(@exercise)
+    else
+      render "new"
+    end
   end
 
   def edit
-    #authorize @exercise
+  
   end
 
   def update
-    @exercise.update(exercise_params)
-    redirect_to exercise_path(@exercise)
+    if @exercise.valid?
+      @exercise.update(exercise_params)
+      redirect_to exercise_path(@exercise)
+    else
+      render "edit"
+    end
   end
 
   def show
@@ -41,7 +49,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:name, :description, :sets, :reps, :author_id, :rest_period, :equipment_needed, target_muscle_ids: [])
+    params.require(:exercise).permit(:name, :description, :sets, :reps, :author_id, :rating, :rest_period, :equipment_needed, target_muscle_ids: [])
   end
 
 

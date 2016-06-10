@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 
   has_many :exercises, :foreign_key => 'author_id'
   has_many :plans
-  has_many :workouts, through: :plans
+  has_many :workouts, through: :plans, :source => :workout_plans
 
-
+  def exercise_creators
+    User.joins(:exercises).group("users.id").having("COUNT(*) > 0").select("users.username")
+  end
 end

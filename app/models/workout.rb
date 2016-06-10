@@ -6,6 +6,11 @@ class Workout < ActiveRecord::Base
   has_many :workout_muscle_groups
   has_many :muscle_groups, :through => :workout_muscle_groups
   belongs_to :author, :class_name => 'User'
+  has_many :comments
+  has_many :users, through: :comments
+
+  validates :name, presence: true, length: { minimum: 2, maximum: 60 }
+  validates :description, presence: true, length: { minimum: 8, maximum: 500 }
 
   accepts_nested_attributes_for :exercises,  reject_if: proc { |attributes| attributes['name'].blank? }
 
@@ -21,5 +26,9 @@ class Workout < ActiveRecord::Base
     end
   end
 
+  def avg_rating
+    return unless self.exercises
+    self.exercises.inject(0){|sum,exercise| sum + exercise.rating}/self.exercises.size
+  end
 
 end

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606200907) do
+ActiveRecord::Schema.define(version: 20160608235742) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "workout_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "exercise_target_muscles", force: :cascade do |t|
     t.integer  "exercise_id"
@@ -31,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160606200907) do
     t.datetime "updated_at",       null: false
     t.integer  "weight"
     t.integer  "sets"
+    t.integer  "rating"
   end
 
   create_table "muscle_groups", force: :cascade do |t|
@@ -77,8 +86,9 @@ ActiveRecord::Schema.define(version: 20160606200907) do
   create_table "workout_exercises", force: :cascade do |t|
     t.integer  "exercise_id"
     t.integer  "workout_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "combined_rating"
   end
 
   create_table "workout_muscle_groups", force: :cascade do |t|

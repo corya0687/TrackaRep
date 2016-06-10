@@ -1,0 +1,9 @@
+<%@workouts.each do |workout|%>
+  <%=workout.name%>
+  <%if !workout.author_id.nil?%>
+    <%=workout.author_id%>
+  <%end%>
+  <%=link_to 'Destroy', workout_path(workout), method: "delete"%>
+  <%=link_to 'Edit', edit_workout_path(workout)%> <br>
+
+<%end%>

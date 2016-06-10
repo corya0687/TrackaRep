@@ -1,4 +1,6 @@
+
 <%if user_signed_in?%>
+
   <%=link_to "Home", root_path, class:"navbar-text"%>
   <%=link_to "Sign Out", destroy_user_session_path, method: "delete", class:"navbar-text"%>
   <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link navbar-right"><%="#{current_user.username}"%></a></p>

@@ -1,1 +1,3 @@
 <%= render partial: "exercise", locals: {exercise:@exercise}%>
+<td><%= link_to "Edit", edit_exercise_path(@exercise) %></td>
+<td><%= link_to "Remove", @exercise, method: :delete, data: { confirm: "Are you sure?" } %></td>

@@ -4,4 +4,6 @@ class WelcomeController < ApplicationController
     @workouts = Workout.all
     @plans = Plan.all
   end
+
+
 end

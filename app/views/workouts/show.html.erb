@@ -1,13 +1,28 @@
+<h3>Workout</h3>
 <%=render partial: "workout", locals: {workout:@workout}%>
-<%=@workout.description%> <br>
-<table class= "table-bordered">
-  <tr>
-    <th>Exercise</th> <th>Num of Reps</th> <th>Weight</th>
-  </tr>
-<%@workout.exercises.each do |exercise|%>
-<tr>
-<td><%=exercise.name%></td><td><%=exercise.reps%></td> <td><%="#{exercise.percentage_to_max} of 1 rep max"%></td>
-<td><%= link_to "Edit", edit_exercise_path(exercise) %></td>
-</tr>
-<%end%>
-</table>
+ <%= link_to "Edit Workout", edit_workout_path %>
+ <br>
+ <br>
+
+<h4>Workout Exercises</h4>
+<%=render partial: "exercises/exercise", collection: @workout.exercises%>
+
+  <h3>Leave Comment</h3>
+  "Signed in as: "<%=current_user.username%>
+<%=form_for @comment do |f|%>
+  <%=f.text_area :content%>
+  <%=f.hidden_field :user_id, value: current_user.id%>
+  <%=f.hidden_field :workout_id, value: @workout.id%></br>
+  <%=f.submit 'Submit Comment'%>
+  <%end%>
+<br>
+<h4>Current Comments on this workout</h4>
+  <%if @workout.comments.empty?%>
+    <h5>There aren't any comments on this workout!</h5>
+  <%else%>
+
+  <%@workout.comments.each do |comment|%>
+    by- <%=comment.user.username%> <br>
+    <%=comment.content%><br>
+    <%end%>
+  <%end%>
