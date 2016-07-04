@@ -28,7 +28,9 @@ class Workout < ActiveRecord::Base
 
   def avg_rating
     return unless self.exercises
-    self.exercises.inject(0){|sum,exercise| sum + exercise.rating}/self.exercises.size
+    avg = self.exercises.inject(0){|sum,exercise| sum + exercise.rating if !exercise.rating.nil?}
+    avg = avg/self.exercises.size unless avg.nil?
+    avg
   end
 
 end

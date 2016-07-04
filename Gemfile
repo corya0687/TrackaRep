@@ -31,6 +31,7 @@ gem 'bootstrap_form'
 gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'therubyracer'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

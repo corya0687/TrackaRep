@@ -14,6 +14,7 @@ class WorkoutsController < ApplicationController
   end
 
   def create
+    # binding.pryW
     @workout = Workout.new(workout_params)
     if @workout.valid?
       @workout.save
@@ -30,7 +31,7 @@ class WorkoutsController < ApplicationController
   def update
     if @workout.valid?
       @workout.update(workout_params)
-      redirect_to workout_path(@exercise)
+      redirect_to workout_path(@workout)
     else
       render "edit"
     end

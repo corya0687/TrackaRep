@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   resources :comments
   resources :plans
-  resources :workouts
+  scope :users do
+    resources :workouts
+  end
+
+
   resources :exercises
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#index'
+
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -58,4 +63,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
