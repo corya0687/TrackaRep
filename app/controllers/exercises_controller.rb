@@ -11,7 +11,8 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = current_user.exercises.build(exercise_params)
+    binding.pry
     if @exercise.valid?
       @exercise.save
       redirect_to exercise_path(@exercise)
@@ -21,7 +22,7 @@ class ExercisesController < ApplicationController
   end
 
   def edit
-  
+
   end
 
   def update

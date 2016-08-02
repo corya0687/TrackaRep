@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   resources :comments
   resources :plans
-  scope :users do
-    resources :workouts
+
+  devise_for :users, :path => 'account', :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  resources :workouts, only: [:index, :show]
+
+  resources :users do
+    resources :workouts, only: [:new, :destroy, :edit, :create, :update]
+    resource :exercises, only: [:new, :destroy, :edit, :create, :update]
   end
+  resources :exercises, only: [:index, :show]
 
-
-  resources :exercises
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#index'
 
   # See how all your routes lay out with "rake routes".

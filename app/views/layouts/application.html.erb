@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Yoked</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-  <div class="page-header">
-    <h1><img src="/assets/yokedlogo.png" width="100px"><small>Manage workouts and exercises</small></h1>
-  </div>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <%=render "layouts/navigation"%>
-      </div>
-    </div>
-  </nav>
-</header>
-
 
 
 <body>
-  <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "flash #{key}" %>
-  <% end %>
-<%= yield %>
+
+  <div id="wrapper">
+    <%= render partial: 'layouts/shared/navigation' %>
+    <div id="page-wrapper">
+
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <%=yield%>
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </div>
+      <!-- /#page-wrapper -->
+  </div>
+  <!-- /#wrapper -->
 
 </body>
 </html>

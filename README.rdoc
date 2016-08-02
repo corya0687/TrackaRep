@@ -29,4 +29,6 @@ Auto complete for muscle groups for exercises and type of workouts.
 Search for video on youtube and pic for muscle group automatically for exercises
 Let user build custom workout with drop downs
 
-4. 
+
+#### Yoked 2.0 JQuery and Dashboard Functionality add. ###
+1. Integrate SB Admin 2 Dashbaord Theme

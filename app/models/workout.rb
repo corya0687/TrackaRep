@@ -12,7 +12,7 @@ class Workout < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 2, maximum: 60 }
   validates :description, presence: true, length: { minimum: 8, maximum: 500 }
 
-  accepts_nested_attributes_for :exercises,  reject_if: proc { |attributes| attributes['name'].blank? }
+#  accepts_nested_attributes_for :exercises,  reject_if: proc { #|attributes| attributes['name'].blank? }
 
   def exercise_attributes=(attributes)
     names= attributes[:name].split(", ")
@@ -22,7 +22,7 @@ class Workout < ActiveRecord::Base
       else
         exercise = Exercise.create(name: exercise_name, author_id: self.author.id)
       end
-    self.exercises << exercise
+    self.workout_exercises.build(exercise_id: exercise.id)
     end
   end
 

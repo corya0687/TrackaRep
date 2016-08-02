@@ -3,7 +3,9 @@
   <%if !workout.author_id.nil?%>
     <%=workout.author_id%>
   <%end%>
-  <%=link_to 'Destroy', workout_path(workout), method: "delete"%>
-  <%=link_to 'Edit', edit_workout_path(workout)%> <br>
-
+    <%=binding.pry%>
+  <% if current_user%>
+    <%=link_to 'Destroy', user_workout_path(current_user, workout), method: "delete"%>
+    <%=link_to 'Edit', edit_user_workout_path(current_user, workout)%> <br>
+  <%end%>
 <%end%>
