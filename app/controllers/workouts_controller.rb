@@ -1,7 +1,6 @@
 class WorkoutsController < ApplicationController
   before_filter :set_workout, :except => [:index, :new, :create]
   def index
-    binding.pry
     @workouts = Workout.all
   end
 

@@ -1,9 +1,10 @@
+<h1>List of Workouts</h1> <%= link_to 'Create New', new_user_workout_path(current_user) %>
+<br>
 <%@workouts.each do |workout|%>
   <%=workout.name%>
   <%if !workout.author_id.nil?%>
     <%=workout.author_id%>
   <%end%>
-    <%=binding.pry%>
   <% if current_user%>
     <%=link_to 'Destroy', user_workout_path(current_user, workout), method: "delete"%>
     <%=link_to 'Edit', edit_user_workout_path(current_user, workout)%> <br>

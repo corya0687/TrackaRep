@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
     if devise_controller? && resource_name == :user && controller_name == "registrations" || controller_name == "sessions"
       "sign_up.html.erb"
     elsif
-      binding.pry
       "application"
     end
   end
