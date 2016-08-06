@@ -22,5 +22,11 @@ class Exercise < ActiveRecord::Base
     order(:rating).last
   end
 
+  def rest_period_mins
+    if self.rest_period
+      Time.at(self.rest_period).utc.strftime("%M:%S")
+    end
+  end
+
 
 end

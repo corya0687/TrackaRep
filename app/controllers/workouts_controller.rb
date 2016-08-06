@@ -1,6 +1,11 @@
 class WorkoutsController < ApplicationController
   before_filter :set_workout, :except => [:index, :new, :create]
   def index
+
+    @upper_body = MuscleGroup.find_by(name: "UpperBody").workouts
+    @core_body = MuscleGroup.find_by(name: "Core").workouts
+    @lower_body = MuscleGroup.find_by(name: "LowerBody").workouts
+    @user_workouts = [Workout.find_by(author_id: current_user.id)]
     @workouts = Workout.all
   end
 
@@ -11,10 +16,11 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
+    @exercises = Exercise.order(created_at: :desc).page(params[:page])
   end
 
   def create
-    # binding.pryW
+    # binding.pry
     @workout = Workout.new(workout_params)
     if @workout.valid?
       @workout.save

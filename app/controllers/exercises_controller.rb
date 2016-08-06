@@ -35,7 +35,10 @@ class ExercisesController < ApplicationController
   end
 
   def show
-
+    respond_to do |format|
+      format.html
+      format.json {render json: @exercise}
+    end
   end
 
   def destroy

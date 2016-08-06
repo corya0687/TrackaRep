@@ -6,6 +6,31 @@
 body {
   background-color: #f8f8f8;
 }
+h1, h2 {
+    display: inline-block;
+}
+
+.fixed-div{
+  position: fixed;
+}
+
+.no-panel-padding{
+  margin-left: 0px;
+}
+
+.custom-page-wrapper {
+ padding-left: 0px;
+ position: inherit;
+margin: 0 0 0 250px;
+border-left: 1px solid #e7e7e7;
+}
+
+.custom_container {
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 
 .register_splash {
   background-image: image-url("bodybuilder.png");
