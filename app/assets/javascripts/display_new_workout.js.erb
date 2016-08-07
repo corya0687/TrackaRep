@@ -10,7 +10,7 @@ function attachListners() {
 }
 
 function displayInputText() {
-  $(".workout_fields").keypress(function (e) {
+  $(".workout_fields").on('keypress', function (e) {
     var key = e.which;
     if(key == 13 || key == 9){
       $("#form-wo-name").text($("#workout_name").val());
@@ -21,7 +21,7 @@ function displayInputText() {
 }
 
 function displayMuscleGroup() {
-  $('[id^="workout_muscle_group_ids"]').click(function(event) {
+  $('[id^="workout_muscle_group_ids"]').on('click',function(event) {
     var fmg = $("#form-muscle-group").text()
     var idValue = ($("label[for="+ event.currentTarget.id + "]").text())
 
@@ -42,7 +42,7 @@ function removeMg(event) {
 }
 
 function displayExercises() {
-  $('[id^="exercise_ids"]').click(function(event) {
+  $('[id^="exercise_ids"]').on('click',function(event) {
     var exercise_id = $(this).val()
     var form_exer = $("#form-exercises").html()
 

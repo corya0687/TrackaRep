@@ -81,9 +81,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
-    kaminari (0.17.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     kgio (2.10.0)
     libv8 (3.16.14.15)
     loofah (2.0.3)
@@ -218,6 +215,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.1.0)
 
 PLATFORMS
   ruby
@@ -231,7 +229,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  kaminari
   omniauth
   omniauth-facebook
   pry
@@ -248,6 +245,7 @@ DEPENDENCIES
   unicorn
   unicorn-rails
   web-console (~> 2.0)
+  will_paginate
 
 BUNDLED WITH
    1.12.1

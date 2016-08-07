@@ -10,37 +10,11 @@
   </ul>
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
-          <table class="table table-striped table-bordered ">
-            <%= page_entries_info @exercises %>
-            <%= paginate @exercises %>
-            <thead>
-              <tr>
-                <th>Pick</th>
-                <th>Name</th>
-                <th>Rating</th>
-                <th>Sets</th>
-                <th>Weight</th>
-                <th>Reps</th>
-                <th>Rest(Min)</th>
-              </tr>
-            </thead>
-              <%@exercises.each do |exercise|%>
-
-              <tr>
-                <td><%= check_box_tag "exercise_ids[]", exercise.id %></td>
-                <td><%= exercise.name %></td>
-                <td><%= exercise.rating %></td>
-                <td><%= exercise.sets %></td>
-                <td><%= exercise.weight%></td>
-                <td><%= exercise.reps %></td>
-                <td><%= exercise.rest_period_mins %></td>
-              </tr>
-
-              <%end%>
-
-          </table>
-
-
+          <div id="exercises">
+            
+            <%= render "exercises" %>
+          </div>
+        </div>
       <!-- <%= f.collection_check_boxes :exercise_ids, @exercises, :id, :name, label: "Choose from Existing Exercises" %> -->
     </div>
     <%=f.fields_for :exercise_attributes, Exercise.new do |exercise_attribute|%>

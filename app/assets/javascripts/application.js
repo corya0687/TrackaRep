@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require bootstrap_sb_admin_base_v2
 //= require display_new_workout
-//= require turbolinks
+//= require pagination
 //= require bootstrap-sprockets

@@ -12,7 +12,6 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = current_user.exercises.build(exercise_params)
-    binding.pry
     if @exercise.valid?
       @exercise.save
       redirect_to exercise_path(@exercise)
