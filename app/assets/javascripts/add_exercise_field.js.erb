@@ -1,0 +1,9 @@
+$(function () {
+  $("#exercise-inputs").on("click",function(){
+    $(".add-new-exercise").html("Page is loading...");
+    $.getScript(this.href,function () {
+      displayExercises();
+    });
+    return false;
+  });
+});

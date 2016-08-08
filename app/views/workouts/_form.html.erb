@@ -14,10 +14,16 @@
             <%= render "exercises" %>
           </div>
         </div>
-      <!-- <%= f.collection_check_boxes :exercise_ids, @exercises, :id, :name, label: "Choose from Existing Exercises" %> -->
     </div>
-    <%=f.fields_for :exercise_attributes, Exercise.new do |exercise_attribute|%>
-    <%=exercise_attribute.text_field :name, label: "Create New Exercise"%>
+
+    <h3>Create New Exercise:</h3>
+    <div class="add-exercise-fields">
+      <%=f.fields_for :exercise_attributes, Exercise.new do |exercise_attribute|%>
+      <%= render partial: "add_exercise_fields", locals: {exercise_attribute: exercise_attribute}%>
+    </div>
+    <button id="exercise-inputs" type="button" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
 
   </div>
 </div>
