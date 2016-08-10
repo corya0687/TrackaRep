@@ -1,27 +1,11 @@
-
-
 <div class="panel no-panel-padding panel-default col-md-6">
   <div class="panel-heading"><h3>Create New Workout</h3></div>
   <div class="panel_body">
-  <%=bootstrap_form_for @workout do |f|%>
+  <%= bootstrap_nested_form_for [current_user, @workout] do |f|%>
   <%= render partial: "form", locals: {f:f}%>
   <%end%>
   </div>
-
-<div class="panel no-panel-padding panel-default col-md-6 col-md-offset-7 " id="display-panel">
-  <div class="panel-heading"><h3>Workout</h3></div>
-  <div class="panel_body">
-    Name: <p id="form-wo-name"></p>
-    Description: <p id="form-wo-desc"></p>
-    Muscle Group: <p id="form-muscle-group"></p>
-    <h4>Exercises</h4>
-    <table class="table table-striped table-bordered " id="form-exercises">
-      <thead>
-      <tr>
-        <th>Name</th><th>Rating</th><th>Sets</th><th>Weight</th><th>Reps</th><th>Rest(Min)</th>
-      </tr>
-      </thead>
-    </table>
-  </div>
 </div>
 </div>
+</div>
+<%= render "display_workout" %>

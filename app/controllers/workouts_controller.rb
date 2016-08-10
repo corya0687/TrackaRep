@@ -1,7 +1,6 @@
 class WorkoutsController < ApplicationController
   before_filter :set_workout, :except => [:index, :new, :create]
   def index
-
     @upper_body = MuscleGroup.find_by(name: "UpperBody").workouts
     @core_body = MuscleGroup.find_by(name: "Core").workouts
     @lower_body = MuscleGroup.find_by(name: "LowerBody").workouts
@@ -10,6 +9,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+
     @comment = Comment.new
     @comments = @workout.comments
   end
@@ -29,7 +29,9 @@ class WorkoutsController < ApplicationController
       @workout.save
       redirect_to workout_path(@workout)
     else
-      render "new"
+      @exercises = Exercise.paginate(page: params[:page], per_page: 8)
+
+      render 'new'
     end
   end
 

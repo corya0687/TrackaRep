@@ -1,5 +1,6 @@
-<%=exercise_attribute.text_field :name, label: "Name"%>
-<%=exercise_attribute.text_field :sets, class: "table-inputs", label: "Sets", inline: true%>
-<%=exercise_attribute.text_field :weight, class: "table-inputs", label: "Weight"%>
-<%=exercise_attribute.text_field :reps, class: "table-inputs", label: "reps"%>
-<%=exercise_attribute.text_field :rest_period, class: "table-inputs", label: "Rest(secs)"%>
+<%=exercise_form.text_field :name, label: "Name"%>
+<%=exercise_form.text_field :sets, class: "table-inputs", label: "Sets", inline: true%>
+<%=exercise_form.text_field :weight, class: "table-inputs", label: "Weight"%>
+<%=exercise_form.text_field :reps, class: "table-inputs", label: "reps"%>
+<%=exercise_form.text_field :rest_period, class: "table-inputs", label: "Rest(secs)"%>
+<%= exercise_form.link_to_remove "Remove this Exercise" %>

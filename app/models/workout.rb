@@ -1,4 +1,5 @@
 class Workout < ActiveRecord::Base
+
   has_many :workout_exercises
   has_many :exercises, :through => :workout_exercises
   has_many :workout_plans
@@ -12,7 +13,7 @@ class Workout < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 2, maximum: 60 }
   validates :description, presence: true, length: { minimum: 8, maximum: 500 }
 
-#  accepts_nested_attributes_for :exercises,  reject_if: proc { #|attributes| attributes['name'].blank? }
+   accepts_nested_attributes_for :exercises,  reject_if: proc { |attributes| attributes['name'].blank? }
 
   def exercise_attributes=(attributes)
     names= attributes[:name].split(", ")
@@ -27,9 +28,9 @@ class Workout < ActiveRecord::Base
   end
 
   def avg_rating
-    return unless self.exercises
+    return unless self.exercises.size != 0
     avg = self.exercises.inject(0){|sum,exercise| sum + exercise.rating if !exercise.rating.nil?}
-    avg = avg/self.exercises.size unless avg.nil?
+    avg = avg/self.exercises.size unless avg.nil? # && self.exercises.size.nil?
     avg
   end
 

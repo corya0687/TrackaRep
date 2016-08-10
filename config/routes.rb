@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :workouts, only: [:new, :destroy, :edit, :create, :update]
-    resource :exercises, only: [:new, :destroy, :edit, :create, :update]
+    resources :exercises, only: [:new, :destroy, :edit, :create, :update]
   end
   resources :exercises, only: [:index, :show]
 

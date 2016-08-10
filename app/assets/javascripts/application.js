@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_nested_form
 //= require bootstrap_sb_admin_base_v2
 //= require display_new_workout
 //= require pagination

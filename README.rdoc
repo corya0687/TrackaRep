@@ -32,5 +32,10 @@ Let user build custom workout with drop downs
 
 #### Yoked 2.0 JQuery and Dashboard Functionality add. ###
 1. Integrate SB Admin 2 Dashbaord Theme
-2. New workouts Page
+2. New workouts Page/Edit, New Exercise Page/Edit
    a. Need to finish ajax search and paginate feature on new workout. Search form doesn't work in render/ exercises div
+3. Attempting to add additional exercises ,, added code for ajax requests but likely won't work.
+
+4. Make sure all forms are working.
+5. Build Run feature.
+6. Build index page.

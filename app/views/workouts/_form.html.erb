@@ -18,15 +18,15 @@
 
     <h3>Create New Exercise:</h3>
     <div class="add-exercise-fields">
-      <%=f.fields_for :exercise_attributes, Exercise.new do |exercise_attribute|%>
-      <%= render partial: "add_exercise_fields", locals: {exercise_attribute: exercise_attribute}%>
+      <%=f.fields_for :exercises do |exercise_form|%>
+      <%= render partial: "add_exercise_fields", locals: {exercise_form: exercise_form}%>
     </div>
-    <button id="exercise-inputs" type="button" class="btn btn-default btn-sm">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-    </button>
+
 
   </div>
 </div>
 
 <%end%>
+<p><%= f.link_to_add '"Add a Exercise"', :exercises %></p>
+
 <%=f.submit %>

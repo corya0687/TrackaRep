@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   attachListners();
 })
@@ -7,17 +6,25 @@ function attachListners() {
   displayInputText();
   displayMuscleGroup();
   displayExercises();
-  addExerciseFields();
+  displayFocusOut();
+  displayNewExercises();
 }
 
 function displayInputText() {
   $(".workout_fields").on('keypress', function (e) {
     var key = e.which;
-    if(key == 13 || key == 9){
+    if(key === 13){
       $("#form-wo-name").text($("#workout_name").val());
       $("#form-wo-desc").text($("#workout_description").val());
       e.preventDefault();
     }
+  });
+}
+
+function displayFocusOut() {
+  $(".workout_fields").on('focusout', function () {
+    $("#form-wo-name").text($("#workout_name").val());
+    $("#form-wo-desc").text($("#workout_description").val());
   });
 }
 
@@ -44,13 +51,12 @@ function removeMg(event) {
 
 function displayExercises() {
   $('#exercise-table').on('click','[id^="exercise_ids"]',function(event) {
-    var exercise_id = $(this).val()
-    var form_exer = $("#form-exercises").html()
+    let exercise_id = $(this).val()
+    let form_exer = $("#form-exercises").html()
     removeExercise(event);
 
     $.get("/exercises/"+exercise_id+".json", function( data ) {
       if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
-        debugger;
         $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+data["name"]+"</td><td>"+data["rating"]+"</td><td>"+data["sets"]+"</td><td>"+data["weight"]+"</td><td>"+data["reps"]+"</td><td>"+data["rest_period_mins"]+"</td></tr>")
        }
     });
@@ -63,8 +69,28 @@ function removeExercise(event) {
   };
 }
 
-function addExerciseFields() {
-  $("#exercise-inputs").on('click', function () {
-    $(".add-exercise-fields").append("<%=render partial: "add_exercise_fields", locals: {exercise_attribute: exercise_attribute}%>")
-  })
+function displayNewExercises() {
+  $(".add-exercise-fields").on('focusout','[id^="workout_exercises_attributes"]', function (event) {
+    let exercise_id = parseInt(this.id.match(/\d+/g)[0])
+    let exercise = "workout_exercises_attributes_"
+    let exJquery = "#"+exercise+exercise_id
+    let form_exer = $("#form-exercises").html()
+    if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
+      $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+$(exJquery+"_name").val()+"</td><td></td><td>"+$(exJquery+"_sets").val()+"</td><td>"+$(exJquery+"_weight").val()+"</td><td>"+$(exJquery+"_reps").val()+"</td><td>"+$(exJquery+"_rest_period").val()+"</td></tr>")
+    } else {
+        $("#exer-row-"+exercise_id).html("<td>"+$(exJquery+"_name").val()+"</td><td></td><td>"+$(exJquery+"_sets").val()+"</td><td>"+$(exJquery+"_weight").val()+"</td><td>"+$(exJquery+"_reps").val()+"</td><td>"+$(exJquery+"_rest_period").val()+"</td></tr>")
+      }
+  });
+}
+
+function removeNewExercise() {
+$(".add-exercise-fields").on('click','.remove_nested_fields', function (event) {
+    debugger;
+    let exercise_id = parseInt(this.id.match(/\d+/g)[0])
+    let exercise = "workout_exercises_attributes_"
+    let exJquery = "#"+exercise+exercise_id
+
+    $("#exer-row-"+exercise_id).remove();
+
+  });
 }
