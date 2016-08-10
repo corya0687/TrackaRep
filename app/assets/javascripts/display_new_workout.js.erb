@@ -8,6 +8,7 @@ function attachListners() {
   displayExercises();
   displayFocusOut();
   displayNewExercises();
+  removeNewExercise();
 }
 
 function displayInputText() {
@@ -85,8 +86,7 @@ function displayNewExercises() {
 
 function removeNewExercise() {
 $(".add-exercise-fields").on('click','.remove_nested_fields', function (event) {
-    debugger;
-    let exercise_id = parseInt(this.id.match(/\d+/g)[0])
+    let exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0])
     let exercise = "workout_exercises_attributes_"
     let exJquery = "#"+exercise+exercise_id
 

@@ -3,4 +3,5 @@
 <%=exercise_form.text_field :weight, class: "table-inputs", label: "Weight"%>
 <%=exercise_form.text_field :reps, class: "table-inputs", label: "reps"%>
 <%=exercise_form.text_field :rest_period, class: "table-inputs", label: "Rest(secs)"%>
+<%=exercise_form.hidden_field :author_id, :value => current_user.id%>
 <%= exercise_form.link_to_remove "Remove this Exercise" %>

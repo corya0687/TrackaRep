@@ -16,7 +16,7 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
-    @exercises = Exercise.paginate(page: params[:page], per_page: 8)
+    @exercise_pages = Exercise.paginate(page: params[:page], per_page: 8)
     respond_to do |format|
       format.html
       format.js
@@ -29,13 +29,14 @@ class WorkoutsController < ApplicationController
       @workout.save
       redirect_to workout_path(@workout)
     else
-      @exercises = Exercise.paginate(page: params[:page], per_page: 8)
+      @exercise_pages = Exercise.paginate(page: params[:page], per_page: 8)
 
       render 'new'
     end
   end
 
   def edit
+    @exercise_pages = Exercise.paginate(page: params[:page], per_page: 8)
 
   end
 
@@ -60,6 +61,6 @@ class WorkoutsController < ApplicationController
   end
 
   def workout_params
-    params.require(:workout).permit(:name, :description, :exercise_ids, :author_id, :muscle_group_ids => [], :exercise_ids => [], exercise_attributes: [:name])
+    params.require(:workout).permit(:name, :description, :exercise_ids, :author_id, :muscle_group_ids => [], :exercise_ids => [], exercises_attributes: [:name, :sets, :weight, :reps, :rest_period, :author_id])
   end
 end

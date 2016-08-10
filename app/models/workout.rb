@@ -13,9 +13,11 @@ class Workout < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 2, maximum: 60 }
   validates :description, presence: true, length: { minimum: 8, maximum: 500 }
 
-   accepts_nested_attributes_for :exercises,  reject_if: proc { |attributes| attributes['name'].blank? }
+   accepts_nested_attributes_for :exercises, :reject_if => :all_blank, :allow_destroy => true
+
 
   def exercise_attributes=(attributes)
+    binding.pry
     names= attributes[:name].split(", ")
     names.each do |exercise_name|
       if Exercise.exists?(name: exercise_name)
@@ -33,5 +35,12 @@ class Workout < ActiveRecord::Base
     avg = avg/self.exercises.size unless avg.nil? # && self.exercises.size.nil?
     avg
   end
+
+  def edit_checked?(exercise)
+    self.exercises.any? do |we|
+      we.id == exercise.id
+    end
+  end
+
 
 end

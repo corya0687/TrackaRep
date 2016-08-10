@@ -14,15 +14,16 @@
             <%= render "exercises" %>
           </div>
         </div>
-    </div>
+      </div>
 
     <h3>Create New Exercise:</h3>
     <div class="add-exercise-fields">
-      <%=f.fields_for :exercises do |exercise_form|%>
+      <%exercise_holder = @workout.exercises%>
+      <%@workout.exercises = []%>
+      <%= f.fields_for :exercises  do |exercise_form|%>
       <%= render partial: "add_exercise_fields", locals: {exercise_form: exercise_form}%>
+      <%@workout.exercises = exercise_holder%>
     </div>
-
-
   </div>
 </div>
 

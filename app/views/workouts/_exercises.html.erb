@@ -1,4 +1,4 @@
-<%= will_paginate @exercises %>
+<%= will_paginate @exercise_pages %>
 
 <table id="exercise-table" class="table table-striped table-bordered ">
 
@@ -13,9 +13,10 @@
     <th>Rest(Min)</th>
   </tr>
 </thead>
-  <%@exercises.each do |exercise|%>
+  <%@exercise_pages.each do |exercise|%>
+    <%status = @workout.edit_checked?(exercise)%>
   <tr>
-    <td><%= check_box_tag "exercise_ids[]", exercise.id %></td>
+    <td><%= check_box_tag "workout[exercise_ids][]", exercise.id, status  %></td>
     <td><%= exercise.name %></td>
     <td><%= exercise.rating %></td>
     <td><%= exercise.sets %></td>
@@ -27,4 +28,4 @@
   <%end%>
 
 </table>
-<%= will_paginate @exercises %>
+<%= will_paginate @exercise_pages %>
