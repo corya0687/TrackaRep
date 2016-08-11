@@ -11,7 +11,9 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = current_user.exercises.build(exercise_params)
+    binding.pry
+    @exercise = Exercise.new(exercise_params)
+    @exercise.author_id = params(:user_id)
     if @exercise.valid?
       @exercise.save
       redirect_to exercise_path(@exercise)
@@ -52,7 +54,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:name, :description, :sets, :reps, :author_id, :rating, :rest_period, :equipment_needed, target_muscle_ids: [])
+    params.require(:exercise).permit(:name, :description, :sets, :reps, :weight, :author_id, :rating, :rest_period, :equipment_needed, target_muscle_ids: [])
   end
 
 

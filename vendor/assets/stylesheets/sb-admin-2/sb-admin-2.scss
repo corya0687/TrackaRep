@@ -11,9 +11,16 @@ h1, h2 {
 }
 
 //New workout css
-
+#display-panel {
+  border-left: 1px solid #eee;
+}
 .table-inputs {
   width: 100%;
+}
+
+.single-ex-form .form-group{
+  width:25%;
+  float: left;
 }
 
 .add-exercise-fields .form-group:not(:first-child){

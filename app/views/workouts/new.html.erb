@@ -1,5 +1,5 @@
-<div class="panel no-panel-padding panel-default col-md-6">
-  <div class="panel-heading"><h3>Create New Workout</h3></div>
+<div class=" col-md-6">
+  <div class="page-header"><h3>Create New Workout</h3></div>
   <div class="panel_body">
     <%= bootstrap_nested_form_for [current_user, @workout] do |f|%>
     <%= render partial: "form", locals: {f:f}%>
