@@ -35,6 +35,7 @@ function countUp() {
 
 // rest_timer - pull time from exercise, grab id from url.
 function countDown() {
+
   var minutes = Math.round((rest_seconds - 30)/60)
   var remainingSeconds = rest_seconds % 60;
   if (remainingSeconds < 10) {
@@ -52,5 +53,13 @@ function add15Secs () {
   $('#add-15-secs').on('click',function () {
     rest_seconds += 15
   })
+}
+
+function setTimerVars(seconds) {
+  var minutes = Math.round((seconds - 30)/60)
+  var remainingSeconds = seconds % 60;
+  if (remainingSeconds < 10) {
+    remainingSeconds = "0" + remainingSeconds;
+  }
 }
 // start on Go

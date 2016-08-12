@@ -10,6 +10,25 @@ h1, h2 {
     display: inline-block;
 }
 
+.run-inputs{
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+.inline-header {
+  display: inline;
+}
+
+.bottom-column
+{
+    float: none;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
 //New workout css
 #display-panel {
   border-left: 1px solid #eee;
