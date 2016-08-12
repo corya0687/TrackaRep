@@ -38,7 +38,19 @@ Let user build custom workout with drop downs
 4. Make sure all forms are working.
   -- Done
 5. Build Run feature.
+  Models:
 
+  Run
+  TotalDuration type asets areps aweight arest Completed_date
+
+  Timer
+  name secs
+    Associations: belongs_to Run
+
+  Run(@spartan_workout)
+  timer(exercise_rest_period)
+
+  Sprint Log-- Need to figure out where how to get api call to exercise to go to run screen
 6. Build index page.
 
 Bugs-
@@ -48,3 +60,6 @@ Bugs-
  ii.Check boxes in table not responding to workout js in rightside panel div
 
  iii. Currently using hidden fields for associations in forms, should be done in controller. Or by using correct objects in forms
+
+####Features
+1. Shows plate combination based off desired weight

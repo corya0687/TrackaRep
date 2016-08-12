@@ -1,7 +1,12 @@
 <table class="table table-striped">
 
-  <tr >
+
+
+<tr >
     <%= exercise.name %> ~ added by: <%= exercise.author.username %> || Rating-<%=exercise.rating%>/10 ||(<%= link_to "View", exercise %>)
+
+    <%= link_to 'Run Exercise L', user_exercise_run_path(current_user, exercise), :method => "get", class: "run-exercise" %>
+    <%= button_to 'Run Exercise', user_exercise_run_path(current_user, exercise), :method => "get", class: "run-exercise", href:user_exercise_run_path(current_user, exercise) %>
   </tr>
   <tr>
     <td>Sets</td> <td>Reps</td> <td>Rest Period</td> <td>Weight</td>
