@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :drills
   resources :comments
   resources :plans
   get '/run' => 'runs#run'

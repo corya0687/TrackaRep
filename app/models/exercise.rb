@@ -5,7 +5,7 @@ class Exercise < ActiveRecord::Base
   has_many :workouts, :through => :workout_exercises
   has_many :exercise_target_muscles
   has_many :target_muscles, :through => :exercise_target_muscles
-
+  has_many :runs
   validates :name, presence: true, length: { minimum: 2, maximum: 60 }
   #validates :description, presence: true, length: { minimum: 8, maximum: 100 } unless :description.nil?
 #  validates :reps, numericality: { only_integer: true } unless :reps.nil?
