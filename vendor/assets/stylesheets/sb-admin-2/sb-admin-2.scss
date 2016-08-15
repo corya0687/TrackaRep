@@ -11,10 +11,27 @@ h1, h2 {
 }
 
 .run-inputs{
-  width: 15%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 50%;
+  font-size: 20px;
+  text-align: center;
   box-sizing: border-box;
+}
+
+.drill-fields-pause {
+opacity: .5;
+}
+
+.drill-fields-pause td {
+  text-align: center;
+}
+
+
+.drill-fields td {
+  text-align: center;
+}
+
+.input-header {
+  text-align: center;
 }
 
 

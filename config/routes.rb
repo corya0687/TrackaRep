@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :drills
   resources :comments
   resources :plans
-  get '/run' => 'runs#run'
 
   devise_for :users, :path => 'account', :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -13,8 +11,13 @@ Rails.application.routes.draw do
     resources :workouts, only: [:new, :destroy, :edit, :create, :update] do
       get '/run' => 'runs#run'
     end
+
     resources :exercises, only: [:new, :destroy, :edit, :create, :update] do
       get '/run' => 'runs#run'
+      resources :runs do
+        resources :drills
+      end
+
     end
   end
   resources :exercises, only: [:index, :show]

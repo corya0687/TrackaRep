@@ -1,0 +1,67 @@
+<div class="row exercise-run page-header ">
+  <div class="col-md-4">
+    <button type="button" id="start-run" class="btn btn-success inline-header">Start Now</button>
+    </div>
+    <div class="col-md-2">
+      <p class="">|Time Elasped|</p>
+      <time class="inline-header" id="duration-timer" >00:00</time>
+    </div>
+    <div class="col-md-offset-8">
+      <button type="button" id="end-run" class="btn btn-danger">Finish</button>
+    </div>
+  </div>
+
+<div id="drill-fields" class="drill-fields-pause">
+  <h4 class="inline-header">Exercise</h4>
+  <h5 class="inline-header">|<%=@exercise.name%>|</h5>
+
+  <p class="inline-header">Set-</p><div class="inline-header" id="current-set">1</div>
+
+
+
+  <%=nested_form_for [current_user, @exercise, @run, @drill] do |f|%>
+  <table>
+    <th>#</th><th class="input-header"><h4>Weight</h4></th><th class="input-header"><h4>Reps</h4></th><th class="input-header"><h4>Rest Period</h4></th>
+    <tr>
+      <td><h5>Enter Actual</h5></td>
+    <td><%=f.text_field :weight, id:"weight-input", class: "run-inputs"%></td>
+    <td><%=f.text_field :reps, id: "rep-input", class: "run-inputs"%></td>
+    <td><time id="rest-timer" >00:00</time><p id="shorten-rest">-30</p><h5 id="add-15-secs">+ 15 secs</h5></td>
+    <td><%=f.submit 'End Set', id:"end-set", class: "btn btn-primary"%></td>
+      </tr>
+    <tr>
+      <td>Target</td>
+      <td><%=@exercise.weight%></td>
+      <td><%=@exercise.reps%></td>
+      <td id="exercise-rest"><%=@exercise.rest_period%></td>
+
+    </tr>
+  </table>
+
+  <%end%>
+</div>
+
+<div class="">
+
+</div>
+  <div class="run-area">
+    <div class="page-header">
+      <h4>Status</h4>
+    </div>
+    <div class="table-responsive">
+      <table id="exercise-status-table" class="table">
+          <thead>
+              <tr>
+                  <th>Set</th>
+                  <th>Weight</th>
+                  <th>Reps</th>
+                  <th>Rest Period</th>
+              </tr>
+          </thead>
+          <tbody>
+
+
+          </tbody>
+      </table>
+    </div>
+  </div>

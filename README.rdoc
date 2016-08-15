@@ -50,7 +50,9 @@ Let user build custom workout with drop downs
   Run(@spartan_workout)
   timer(exercise_rest_period)
 
-  Sprint Log-- Need to figure out where how to get api call to exercise to go to run screen
+  Sprint Log-- currently working on getting exercise to run correctly, set is counting.
+
+ Then create Form
 6. Build index page.
 
 Bugs-
@@ -63,3 +65,4 @@ Bugs-
 
 ####Features
 1. Shows plate combination based off desired weight
+2.

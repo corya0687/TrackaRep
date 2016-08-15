@@ -11,7 +11,6 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    binding.pry
     @exercise = Exercise.new(exercise_params)
     @exercise.author_id = params(:user_id)
     if @exercise.valid?
