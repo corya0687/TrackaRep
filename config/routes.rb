@@ -9,12 +9,11 @@ Rails.application.routes.draw do
   resources :workouts, only: [:index, :show]
 
   resources :users do
-    resources :workouts, only: [:new, :destroy, :edit, :create, :update] do
-      get '/run' => 'runs#run'
-    end
+    resources :workouts, only: [:new, :destroy, :edit, :create, :update]
+    
+    resources :runs, only:[:index,:show]
 
     resources :exercises, only: [:new, :destroy, :edit, :create, :update] do
-      get '/run' => 'runs#run'
       resources :runs do
         resources :drills, except: [:index, :show]
       end

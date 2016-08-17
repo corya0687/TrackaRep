@@ -3,9 +3,18 @@ class RunsController < ApplicationController
     @exercise = Exercise.find(params[:exercise_id])
   end
 
+  def index
+    @runs = current_user.runs
+    respond_to do |format|
+      format.html
+      format.json {render json:@runs}
+    end
+  end
+
   def new
     @exercise = Exercise.find(params[:exercise_id])
     @run = @exercise.runs.build
+    @run.user_id = current_user.id
     @run.save
     @drill = @run.drills.build
   end
@@ -16,7 +25,6 @@ class RunsController < ApplicationController
 
   def show
     @run = Run.find(params[:id])
-    binding.pry
     respond_to do |format|
       format.html
       format.json {render json: @run}
