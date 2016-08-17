@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :exercises, :foreign_key => 'author_id'
   has_many :plans
   has_many :workouts, through: :plans, :source => :workout_plans
+  has_many :runs
 
 
   def exercise_creators

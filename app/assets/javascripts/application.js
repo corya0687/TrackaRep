@@ -16,6 +16,7 @@
 //= require jquery_nested_form
 //= require bootstrap_sb_admin_base_v2
 //= require runs
+//= require welcome
 //= require timer
 //= require display_new_workout
 //= require pagination
