@@ -7,7 +7,7 @@
       <p id="total-time-desc">Exercise Duration</p>
     </div>
     <div class="col-md-offset-10">
-        <%= link_to 'Finish', "/users/#{current_user.id}/exercises/#{@exercise.id}/runs/#{@run.id}", class: "btn btn-danger", id:"end-run" %>
+      <a class="btn btn-danger" id="end-run" href=" <%=user_exercise_run_path(current_user, @exercise, @run)%>">Finish</a>
     </div>
   </div>
 

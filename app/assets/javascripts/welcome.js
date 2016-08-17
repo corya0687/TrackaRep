@@ -6,16 +6,19 @@ $(function () {
 
 });
 
-
-
 function recentRuns() {
-    let user_id = $("#see-all-ran").attr("href").match(/\d+/)[0]
-    $.get('/users/'+user_id+'/runs.json',function (response) {
-      console.log(response)
-      runs = response;
-    }).done(function () {
-      addRunsToWelcome(runs);
-    });
+    let user_id =$("#see-all-ran").attr("href")
+    if (user_id) {
+      user_id = user_id.match(/\d+/)[0]
+      $.get('/users/'+user_id+'/runs.json',function (response) {
+        console.log(response)
+        runs = response;
+      }).done(function () {
+        addRunsToWelcome(runs);
+      });
+    }
+
+
 }
 
 function addRunsToWelcome(runs) {

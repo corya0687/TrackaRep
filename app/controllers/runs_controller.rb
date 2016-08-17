@@ -23,6 +23,11 @@ class RunsController < ApplicationController
 
   end
 
+  def update
+    binding.pry
+
+  end
+
   def show
     @run = Run.find(params[:id])
     respond_to do |format|
@@ -30,4 +35,11 @@ class RunsController < ApplicationController
       format.json {render json: @run}
     end
   end
+
+  private
+
+  def run_params
+    params.require(:run).permit(:duration, :drills=> [],  )
+  end
+
 end
