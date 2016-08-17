@@ -3,10 +3,12 @@
 
 
 <tr >
+  <%if current_user%>
+  <%= link_to 'Run', new_user_exercise_run_path(current_user, exercise), class: " btn btn-success run-exercise" %>
+  <%end%>
     <%= exercise.name %> ~ added by: <%= exercise.author.username %> || Rating-<%=exercise.rating%>/10 ||(<%= link_to "View", exercise %>)
 
-    <%= link_to 'Run Exercise L', new_user_exercise_run_path(current_user, exercise), :method => "get", class: "run-exercise" %>
-    <%= button_to 'Run Exercise', new_user_exercise_run_path(current_user, exercise), :method => "get", class: "run-exercise" %>
+
   </tr>
   <tr>
     <td>Sets</td> <td>Reps</td> <td>Rest Period</td> <td>Weight</td>

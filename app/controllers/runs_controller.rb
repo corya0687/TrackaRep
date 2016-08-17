@@ -13,4 +13,8 @@ class RunsController < ApplicationController
   def create
 
   end
+
+  def show
+    @run = Run.find(params[:id])
+  end
 end

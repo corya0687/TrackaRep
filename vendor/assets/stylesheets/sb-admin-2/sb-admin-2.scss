@@ -7,8 +7,46 @@ body {
   background-color: #f8f8f8;
 }
 h1, h2 {
-    display: inline-block;
 }
+
+.brand-color a{
+  color: gold;
+}
+
+
+
+
+
+#logo  {
+  color: gold;
+}
+
+#signed-in-as{
+  color: #fff;
+  padding-right: 50px;
+}
+//nav
+#top-nav-bar {
+  background-color: black;
+}
+
+//
+.run-exercise {
+  color: #fff;
+  font-size: 20px;
+}
+//start run
+.cant-click {
+  pointer-events: none;
+  opacity: .2;
+}
+
+#total-time-desc{
+  font-size: 12px;
+  font-style:italic;
+}
+
+//sets during run
 
 .run-inputs{
   width: 50%;
@@ -17,8 +55,18 @@ h1, h2 {
   box-sizing: border-box;
 }
 
+#drill-fields table {
+  width: 80%;
+}
+
 .drill-fields-pause {
-opacity: .5;
+  opacity: .3;
+  pointer-events: none;
+}
+
+#end-set-instructions {
+  font-size: 10px;
+  font-style: italic;
 }
 
 .drill-fields-pause td {
@@ -33,6 +81,56 @@ opacity: .5;
 .input-header {
   text-align: center;
 }
+
+
+//Exercise Duration Timer
+.exercise-timer {
+  font-size: 25px;
+  text-align: center;
+}
+
+//Rest Timer
+.big-column {
+  width: 100%;
+  font-size: 36px;
+  text-align: center;
+}
+
+#rest-timer-all table {
+  width: 100%;
+}
+
+#add-15-secs {
+  display: inline;
+  font-size: 14px;
+  color: green;
+  margin: 2px;
+}
+
+#rest-timer{
+  display:inline;
+}
+
+#shorten-rest {
+display:inline;
+font-size: 14px;
+color: red;
+margin: 2px;
+}
+
+#exercise-rest-target{
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+}
+
+#exercise-rest {
+  display: inline;
+}
+
+
+
+
 
 
 .inline-header {
