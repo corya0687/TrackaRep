@@ -2,11 +2,13 @@
   <div class="col-md-6">
     <h4 class="page-header">Recently Added Exercises</h4>
     <%=render partial: "exercises/exercise", collection: @exercises%>
+    <%= will_paginate @exercises%>
   </div>
 
 
   <div class="col-md-6">
     <h4 class="page-header">Recently Added Workouts </h4>
     <%=render partial: "workouts/workout", collection: @workouts%>
+    <%= will_paginate @workouts%>
   </div>
 </div>

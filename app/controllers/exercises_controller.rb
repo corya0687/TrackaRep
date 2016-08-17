@@ -1,6 +1,7 @@
 class ExercisesController < ApplicationController
   before_filter :set_exercise, :except => [:index, :new, :create]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   def index
     @exercises = Exercise.all
   end
@@ -12,7 +13,7 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = Exercise.new(exercise_params)
-    @exercise.author_id = params(:user_id)
+    @exercise.author_id = params[:user_id]
     if @exercise.valid?
       @exercise.save
       redirect_to exercise_path(@exercise)
