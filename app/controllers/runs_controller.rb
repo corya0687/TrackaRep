@@ -18,7 +18,7 @@ class RunsController < ApplicationController
     @run = Run.find(params[:id])
     respond_to do |format|
       format.html
-      format.json {render json: @drill.to_json}
+      format.json {render json: @drill}
     end
   end
 end

@@ -29,7 +29,9 @@ gem 'pry'
 gem 'bootstrap_form'
 gem 'nested_form'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'active_model_serializers'
+
+gem 'bcrypt', '~> 3.1.7'
 gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-facebook'

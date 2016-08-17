@@ -15,7 +15,7 @@ class DrillsController < ApplicationController
 
   def show
     @drill = Drill.find(params[:id])
-    render json: @drill.to_json
+    render json: @drill
   end
 
   def edit
