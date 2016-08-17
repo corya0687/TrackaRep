@@ -7,7 +7,7 @@ class RunsController < ApplicationController
     @runs = current_user.runs
     respond_to do |format|
       format.html
-      format.json {render json:@runs}
+      format.json {render json: @runs}
     end
   end
 
