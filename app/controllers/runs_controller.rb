@@ -16,9 +16,10 @@ class RunsController < ApplicationController
 
   def show
     @run = Run.find(params[:id])
+    binding.pry
     respond_to do |format|
       format.html
-      format.json {render json: @drill}
+      format.json {render json: @run}
     end
   end
 end
