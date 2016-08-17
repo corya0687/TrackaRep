@@ -24,8 +24,11 @@ class RunsController < ApplicationController
   end
 
   def update
+    @run = Run.find(params[:id])
     binding.pry
 
+    @run.update(run_params)
+    redirect_to user_run_path(current_user, @run);
   end
 
   def show
