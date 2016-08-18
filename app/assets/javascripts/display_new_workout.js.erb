@@ -51,7 +51,7 @@ function removeMg(event) {
 }
 
 function displayExercises() {
-  $('#exercise-table').on('click','[id^="exercise_ids"]',function(event) {
+  $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
     let exercise_id = $(this).val()
     let form_exer = $("#form-exercises").html()
     removeExercise(event);
