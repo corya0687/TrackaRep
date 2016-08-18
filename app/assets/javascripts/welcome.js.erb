@@ -22,13 +22,21 @@ function recentRuns() {
 }
 
 function addRunsToWelcome(runs) {
+  debugger;
   runs.forEach(function (run) {
+    addAvgWeight(run);
     displayRun(run);
   });
 }
 
+function addAvgWeight(run) {
+  run.avg_weight = function () {
+  let weights = run.drills.forEach(function (drill) {
+    return drill.weight
+    })
+  }
+}
 
 function displayRun(run) {
-  <%=binding.pry%>
   $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.exercise.sets+"</td><td>"+run.duration+"</td></tr>")
 }
