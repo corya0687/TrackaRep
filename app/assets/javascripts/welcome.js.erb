@@ -29,14 +29,20 @@ function addRunsToWelcome(runs) {
 }
 
 function addAvgWeight(run) {
-  debugger;
   run.avg_weight = function () {
-  let weights = run.drills.map(function(drill){
+  var weights = run.drills.map(function(drill){
     return drill.weight
-    })
+    }).reduce(add, 0);
+    var avg;
+    avg = weights/run.drills.length;
+    return avg
   }
 }
 
+function add(a, b) {
+  return a + b;
+}
+
 function displayRun(run) {
-  $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.exercise.sets+"</td><td>"+run.duration+"</td></tr>")
+  $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.exercise.sets+"</td><td>"+run.avg_weight()+" lbs</td><td>"+run.duration+"</td></tr>")
 }
