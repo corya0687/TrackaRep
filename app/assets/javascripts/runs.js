@@ -10,15 +10,12 @@ function attachRunListeners() {
 
 function setRunDataUrl() {
   $("#end-run").on('click',function (e) {
-    debugger;
-
     let url = $(this).data("href")
     let data = {
       "run" : {
         "duration" : duration_seconds
         }
       }
-
       updateRun(url, data);
   })
 

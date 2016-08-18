@@ -22,7 +22,6 @@ function recentRuns() {
 }
 
 function addRunsToWelcome(runs) {
-  debugger;
   runs.forEach(function (run) {
     addAvgWeight(run);
     displayRun(run);
@@ -30,8 +29,9 @@ function addRunsToWelcome(runs) {
 }
 
 function addAvgWeight(run) {
+  debugger;
   run.avg_weight = function () {
-  let weights = run.drills.forEach(function (drill) {
+  let weights = run.drills.map(function(drill){
     return drill.weight
     })
   }
