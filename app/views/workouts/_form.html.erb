@@ -4,7 +4,7 @@
 <%= f.collection_check_boxes :muscle_group_ids, MuscleGroup.all, :id, :name, label: "Muscle Groups", class: "checkbox-inline"%>
 
 <div class="container custom_container">
-  <h2>Exercises </h2>&nbsp<%= link_to 'Create New Workout', new_user_workout_path(current_user) %>
+  <h2>Exercises </h2>
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">My Exercises</a></li>
   </ul>
