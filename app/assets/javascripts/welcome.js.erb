@@ -21,16 +21,18 @@ function recentRuns() {
 
 }
 
-function Run(id, exercise) {
+function Run(id, exercise, drills, duration) {
   this.exercise = exercise;
   this.id = id;
+  this.drills = drills
+  this.duration = duration;
 }
 
 
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
     debugger;
-    let run = new Run(run_data.id, run_data.exercise)
+    let run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
     addAvgWeight(run);
     displayRun(run);
   });
