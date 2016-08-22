@@ -29,14 +29,14 @@ function Run(id, exercise, drills, duration) {
 }
 
 Run.prototype.avgWeight = function () {
-  run.avg_weight = function () {
-  var weights = run.drills.map(function(drill){
+  var weights = this.drills.map(function(drill){
     return drill.weight
     }).reduce(add, 0);
     var avg;
-    avg = weights/run.drills.length;
+    avg = weights/this.drills.length;
     return avg
-};
+  };
+}
 
 
 function addRunsToWelcome(runs) {
