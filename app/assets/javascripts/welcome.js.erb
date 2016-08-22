@@ -28,6 +28,16 @@ function Run(id, exercise, drills, duration) {
   this.duration = duration;
 }
 
+Run.prototype.avgWeight = function () {
+  run.avg_weight = function () {
+  var weights = run.drills.map(function(drill){
+    return drill.weight
+    }).reduce(add, 0);
+    var avg;
+    avg = weights/run.drills.length;
+    return avg
+};
+
 
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
