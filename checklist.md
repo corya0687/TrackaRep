@@ -1,5 +1,5 @@
 # Checklist of Outstanding features
 
-[x] Core functionality
-[ ] feature 1
-[ ] feature 2
+* [x] Core functionality
+* [ ] feature 1
+* [ ] feature 2
