@@ -1,6 +1,7 @@
 'use strict';
 
 var runs;
+
 $(function () {
   recentRuns();
 
@@ -29,7 +30,7 @@ function Run(id, exercise) {
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
     debugger;
-    run = new Run(run_data.id, run_data.exercise)
+    let run = new Run(run_data.id, run_data.exercise)
     addAvgWeight(run);
     displayRun(run);
   });
