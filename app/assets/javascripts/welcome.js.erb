@@ -24,7 +24,7 @@ function recentRuns() {
 function Run(id, exercise, drills, duration) {
   this.exercise = exercise;
   this.id = id;
-  this.drills = drills
+  this.drills = drills;
   this.duration = duration;
 }
 
@@ -43,7 +43,6 @@ function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
     debugger;
     let run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
-    addAvgWeight(run);
     displayRun(run);
   });
 }
@@ -53,5 +52,5 @@ function add(a, b) {
 }
 
 function displayRun(run) {
-  $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.exercise.sets+"</td><td>"+run.avg_weight()+" lbs</td><td>"+run.duration+"</td></tr>")
+  $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.exercise.sets+"</td><td>"+run.avgWeight()+" lbs</td><td>"+run.duration+"</td></tr>")
 }
