@@ -59,7 +59,7 @@ Bugs-
 1. Edit and New w validation errors workout forms-
  i. Field should have better way of avoiding fields_for exercises populating incorrectly on the edit and new page.
 
- ii.Check boxes in table not responding to workout js in rightside panel div
+ ii.Check boxes in table not responding to workout js in right  -side panel div
 
  iii. Currently using hidden fields for associations in forms, should be done in controller. Or by using correct objects in forms
 

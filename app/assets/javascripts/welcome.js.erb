@@ -13,7 +13,6 @@ function recentRuns() {
       $.get('/users/'+user_id+'/runs.json',function (response) {
         console.log(response)
         runs = response;
-      }).done(function () {
         addRunsToWelcome(runs);
       });
     }
@@ -21,8 +20,16 @@ function recentRuns() {
 
 }
 
+function Run(id, exercise) {
+  this.exercise = exercise;
+  this.id = id;
+}
+
+
 function addRunsToWelcome(runs) {
-  runs.forEach(function (run) {
+  runs.forEach(function (run_data) {
+    debugger;
+    run = new Run(run_data.id, run_data.exercise)
     addAvgWeight(run);
     displayRun(run);
   });
