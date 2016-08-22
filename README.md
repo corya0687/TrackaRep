@@ -2,7 +2,7 @@
 
 ##Introduction
 
-User generated exercise and workout database. Users are also able to actively track exercises during an exercise and see their progress.
+Yoked is a user generated exercise and workout database. Users are also able to actively track exercises during an exercise and see their progress.
 
 ##Installation
 
