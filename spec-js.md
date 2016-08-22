@@ -4,9 +4,9 @@ Specs:
 - [X] Use jQuery for implementing new requirements
   + Used Jquery for requirements as well as form pages for exercises and workout resources.
 - [X] Include a show page rendered using jQuery and an Active Model Serialization JSON backend.
-  + Used exercise show actions for API interface
+  + Used show api end point for exercise model to show new and current exercise data in workout create and edit forms
 - [X] Include an index page rendered using jQuery and an Active Model Serialization JSON backend.
-  + Welcome index page, latest run uses Jquery to get and add.
+  + Welcome index page, latest run uses Jquery to get Runs index for current user.
 - [X ] Include at least one has_many relationship in information rendered via JSON
   + Has_many AMS relationship is used on welcome index page
 - [X] Include at least one link that loads or updates a resource without reloading the page

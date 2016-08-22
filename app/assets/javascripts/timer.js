@@ -18,7 +18,7 @@ function startExercise() {
     durationTimer();
     $("#drill-fields").removeClass("drill-fields-pause")
     $("#drill-fields").toggleClass("drill-fields")
-    $("#start-run").addClass("cant-click");  
+    $("#start-run").addClass("cant-click");
   });
 }
 
