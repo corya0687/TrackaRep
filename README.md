@@ -9,9 +9,8 @@ User generated exercise and workout database. Users are also able to actively tr
 To get this running locally on your computer:
 
 *on Mac in terminal*
-- Clone this repo locally with '$git clone'
-- https://github.com/corya0687/yoked
-- cd into the directory
+- Clone this repo locally with $git clone https://github.com/corya0687/yoked
+- $cd into yoked directory
 - Enter `$bundle`
 - Enter `$rake db:migrate`
 - Enter `$rails s` to run
