@@ -33,15 +33,14 @@ Run.prototype.avgWeight = function () {
     return drill.weight
     }).reduce(add, 0);
     var avg;
-    avg = weights/run.drills.length;
+    avg = weights/this.drills.length;
     return avg
   };
-}
+
 
 
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
-    debugger;
     let run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
     displayRun(run);
   });
