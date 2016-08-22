@@ -33,7 +33,7 @@ Run.prototype.avgWeight = function () {
     return drill.weight
     }).reduce(add, 0);
     var avg;
-    avg = weights/this.drills.length;
+    avg = weights/run.drills.length;
     return avg
   };
 }
@@ -46,17 +46,6 @@ function addRunsToWelcome(runs) {
     addAvgWeight(run);
     displayRun(run);
   });
-}
-
-function addAvgWeight(run) {
-  run.avg_weight = function () {
-  var weights = run.drills.map(function(drill){
-    return drill.weight
-    }).reduce(add, 0);
-    var avg;
-    avg = weights/run.drills.length;
-    return avg
-  }
 }
 
 function add(a, b) {
