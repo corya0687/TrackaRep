@@ -50,6 +50,16 @@ function removeMg(event) {
   });
 }
 
+function Exercise(id, name, sets, reps, rating, weight, rest_period_mins) {
+  this.id = id;
+  this.name = name;
+  this.id = sets;
+  this.name = reps;
+  this.id = rating;
+  this.name = weight;
+  this.rest_period_mins = rest_period_mins;
+}
+
 function displayExercises() {
   $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
     let exercise_id = $(this).val()

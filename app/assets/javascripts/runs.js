@@ -6,8 +6,6 @@ function attachRunListeners() {
   setRunDataUrl();
 }
 
-
-
 function setRunDataUrl() {
   $("#end-run").on('click',function (e) {
     let url = $(this).data("href")
@@ -26,7 +24,6 @@ function updateRun(url, data) {
     url: url,
     type: 'PATCH',
     dataType: 'javascript',
-    data: data,
-    success: console.log(data)
+    data: data
   })
 }

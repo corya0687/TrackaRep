@@ -20,13 +20,14 @@ Specs:
 - [X] Include at least one link that loads or updates a resource without reloading the page
 
   + Endset on Run updates the duration of Run without loading
+  
 - [X] Translate JSON responses into js model objects.
 
   + Used .ajax calls to return js model objects in welcome.js
-  
+
 - [X] At least one of the js model objects must have at least one method added by your code to the prototype.
 
-  + added avg_weight() method to the prototype of run object in welcome.js.
+  + added avgWeight() method to the prototype of run object in welcome.js.
 
 
 Confirm
@@ -34,3 +35,6 @@ Confirm
 - [X] Your commit messages are meaningful
 - [X] You made the changes in a commit that relate to the commit message
 - [X] You don't include changes in a commit that aren't related to the commit message
+
+
+# Specifications for the Rails with jQuery Assessment

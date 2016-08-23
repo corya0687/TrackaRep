@@ -40,7 +40,7 @@ class RunsController < ApplicationController
   private
 
   def run_params
-    params.require(:run).permit(:duration, :drills=> [],  )
+    params.require(:run).permit(:duration, :drills=> []  )
   end
 
 end
