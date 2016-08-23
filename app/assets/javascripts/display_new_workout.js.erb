@@ -53,10 +53,10 @@ function removeMg(event) {
 function Exercise(id, name, sets, reps, rating, weight, rest_period_mins) {
   this.id = id;
   this.name = name;
-  this.id = sets;
-  this.name = reps;
-  this.id = rating;
-  this.name = weight;
+  this.sets = sets;
+  this.reps = reps;
+  this.rating = rating;
+  this.weight = weight;
   this.rest_period_mins = rest_period_mins;
 }
 
@@ -69,6 +69,7 @@ function displayExercises() {
     $.get("/exercises/"+exercise_id+".json", function( data ) {
       debugger;
       let exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period_mins)
+      debugger;
       if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
         $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period_mins+"</td></tr>")
        }
