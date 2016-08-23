@@ -67,8 +67,10 @@ function displayExercises() {
     removeExercise(event);
 
     $.get("/exercises/"+exercise_id+".json", function( data ) {
+      debugger;
+      let exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period_mins)
       if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
-        $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+data["name"]+"</td><td>"+data["rating"]+"</td><td>"+data["sets"]+"</td><td>"+data["weight"]+"</td><td>"+data["reps"]+"</td><td>"+data["rest_period_mins"]+"</td></tr>")
+        $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period_mins+"</td></tr>")
        }
     });
   })
