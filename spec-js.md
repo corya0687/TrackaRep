@@ -19,11 +19,11 @@ Specs:
 
 - [X] Include at least one link that loads or updates a resource without reloading the page
 
-  + Endset on Run updates the duration of Run without loading
-  
+  + Endset on Run loads the drills on run new page
+
 - [X] Translate JSON responses into js model objects.
 
-  + Used .ajax calls to return js model objects in welcome.js
+  + Exercise and Display_new_workout.js and runs.js both use object constructors and instantiate object prototypically
 
 - [X] At least one of the js model objects must have at least one method added by your code to the prototype.
 
