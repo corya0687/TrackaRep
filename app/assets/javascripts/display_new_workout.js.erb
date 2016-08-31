@@ -64,22 +64,20 @@ function displayExercises() {
   $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
     let exercise_id = $(this).val()
     let form_exer = $("#form-exercises").html()
-    removeExercise(event);
+    if(event.currentTarget.checked === false){
+      removeExercise(event);
+    } else {
 
-    $.get("/exercises/"+exercise_id+".json", function( data ) {
-      let exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period)
-      debugger;
-      if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
-        $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period+"</td></tr>")
-       }
-    });
+      $.get("/exercises/"+exercise_id+".json", function( data ) {
+        let exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period)
+          $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period+"</td></tr>")
+      });
+    }
   })
 }
 
 function removeExercise(event) {
-  if(event.currentTarget.checked === false){
     $("#exer-row-" + event.currentTarget.value).remove();
-  };
 }
 
 function displayNewExercises() {

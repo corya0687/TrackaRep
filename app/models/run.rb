@@ -10,7 +10,6 @@ class Run < ActiveRecord::Base
          sum + drill.weight if !drill.weight.nil?
        end
         avg = avg/self.drills.size unless avg.nil?
-        binding.pry
         avg
     end
   end
