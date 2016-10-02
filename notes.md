@@ -51,6 +51,9 @@ Let user build custom workout with drop downs
 
  Then create Form
 6. Build index page.
+7. Workout associate with runs
+8. Run creates a workout name of "ONE OFF" if no workout is specified.
+9. Also any "One off Exercises" ran within 3 hours of eachother automatically fall under the same oneOff workout.
 
 Bugs-
 1. Edit and New w validation errors workout forms-

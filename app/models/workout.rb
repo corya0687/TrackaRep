@@ -9,6 +9,7 @@ class Workout < ActiveRecord::Base
   belongs_to :author, :class_name => 'User'
   has_many :comments
   has_many :users, through: :comments
+  has_many :runs
 
   validates :name, presence: true, length: { minimum: 2, maximum: 60 }
   validates :description, presence: true, length: { minimum: 8, maximum: 500 }

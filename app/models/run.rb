@@ -2,6 +2,7 @@ class Run < ActiveRecord::Base
   has_many :timers
   belongs_to :exercise
   belongs_to :user
+  belongs_to :workout
   has_many :drills
 
   def avg_exercise_weight
@@ -13,4 +14,9 @@ class Run < ActiveRecord::Base
         avg
     end
   end
+
+  def workout_name
+    self.workout.name || self.active_workout
+  end
+
 end
