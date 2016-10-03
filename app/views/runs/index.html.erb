@@ -1,3 +1,18 @@
 <%@runs.each do |run|%>
-  <%=run.workout_attached.name%>
+<table class="table">
+  <tr>
+      <%=run.workout_attached.name%>
+    <th>
+      Date: <%=run.workout_attached.updated_at.strftime("%d/%m/%Y")%>
+    </th>
+  </tr>
+<tr>
+  <th>
+    Exercise Name:
+  </th>
+  <%= render partial: "row_header", locals:{@run.drills} %>
+</tr>
+
+</table>
+
 <%end%>
