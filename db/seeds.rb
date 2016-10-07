@@ -9,30 +9,11 @@
 ##--> Add users
 
 ##--> Add Musclses
+#philly lat/long = 39.9526/-75.1652
+#range = 0.05
 
-traps = TargetMuscle.create(name:"Traps")
-biceps= TargetMuscle.create(name:"Biceps")
-Upperback= TargetMuscle.create(name:"Upper Back")
-TargetMuscle.create(name:"Lower Back")
-TargetMuscle.create(name:"Hamstrings")
-TargetMuscle.create(name:"Calves")
-quads= TargetMuscle.create(name:"Quadriceps")
-chest= TargetMuscle.create(name:"Chest")
-TargetMuscle.create(name:"Abdominal")
-TargetMuscle.create(name:"Shoulder")
-TargetMuscle.create(name:"Triceps")
-TargetMuscle.create(name:"Glutes")
 
-##->Add Exercises
-
-curl = Exercise.create(name: "Barbell Curl", description: "Bicep curls with Barbell", reps: 8, author_id: 1, rest_period: 90, equipment_needed: "Barbell")
-
-curl.target_muscles << biceps
-
-press = Exercise.create(name: "Bench Press", description: "Chest press on weight bench", reps: 8, author_id: 2, rest_period: 90, equipment_needed: "Barbell")
-
-press.target_muscles << chest
-
-pushdown = Exercise.create(name: "Tricep Pushdown", description: "Standing", reps: 8, author_id: 2, rest_period: 90, equipment_needed: "Pulley")
-
-pushdown.target_muscles << traps
+User.all.each do |user|
+  user.longtitude = rand(-75.21...-75.11)
+  user.save
+end
