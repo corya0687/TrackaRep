@@ -1,7 +1,7 @@
 <table class="table table-striped">
 
   <tr >
-    <%= workout.name %> ~ added by: <%= workout.author.username %>(<%= link_to "View", workout_path(workout) %>)
+    <%= workout.name %> ~ added by: <%= workout.author ? workout.author.username : "no author" %>(<%= link_to "View", workout_path(workout) %>)
   </tr>
   <tr>
     <td>Rating-<%=workout.avg_rating%>/10</td>
