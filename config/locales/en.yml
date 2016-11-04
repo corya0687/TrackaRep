@@ -37,5 +37,11 @@ en:
       rest: "Rest Period"
       weight: "Weight"
       repmax: "of 1 rep max"
+    new:
+      title: "Create New Exercise"
+      rest: "Rest(secs)"
+      target_muscles: "Target Muscles"
+    edit:
+      title: "Edit Exercise"
   run:
     button: "Run"

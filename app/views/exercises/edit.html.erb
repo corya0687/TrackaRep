@@ -1,5 +1,5 @@
 <div class="col-md-6 ">
-  <div class="page-header"><h3>Edit Exercise</h3></div>
+  <div class="page-header"><h3><%= t "exercises.edit.title"%></h3></div>
   <div class="panel_body">
     <%=bootstrap_nested_form_for [current_user, @exercise] do |f|%>
     <%=render partial: "form", locals: {f:f}%>

@@ -5,7 +5,7 @@
   <%=f.text_field :reps, class: "table-inputs"%>
   <%=f.text_field :weight, class: "table-inputs"%>
   <%=f.text_field :sets, class: "table-inputs"%>
-  <%=f.text_field :rest_period, label:"Rest(secs)", class: "table-inputs"%>
+  <%=f.text_field :rest_period, label:"#{t "exercises.new.rest"}", class: "table-inputs"%>
 </div>
 
-<%= f.collection_check_boxes :target_muscle_ids, TargetMuscle.all, :id, :name, label: "Target Muscles"%>
+<%= f.collection_check_boxes :target_muscle_ids, TargetMuscle.all, :id, :name, label: "#{t "exercises.new.target_muscles"}"%>
