@@ -10,7 +10,15 @@ h1, h2 {
 }
 
 .brand-color a{
-  color: gold;
+  color: #3a3a3a;
+  line-height: 69px;
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+
+}
+a {
+  color: #8B0000;
 }
 
 
@@ -18,7 +26,7 @@ h1, h2 {
 
 
 #logo  {
-  color: gold;
+  color: #3a3a3a;
 }
 
 #signed-in-as{
@@ -27,7 +35,8 @@ h1, h2 {
 }
 //nav
 #top-nav-bar {
-  background-color: black;
+  background-color: white;
+  box-shadow: 0 0 24px rgba(0,0,0,0.15);
 }
 
 //exercise panels
@@ -42,6 +51,15 @@ h1, h2 {
 
 .panel .table th {
   border-top: 0px;
+}
+
+.panel-default>.panel-heading a {
+  color: #f1c40f;
+}
+
+.panel-default>.panel-heading {
+  color: white;
+  background-color: #3a3a3a;
 }
 
 
