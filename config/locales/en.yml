@@ -27,3 +27,7 @@ en:
   login:
     title: "Login"
     button: "Sign In"
+  exercises:
+    added_by: "~added by:"
+  run:
+    button: "Run"
