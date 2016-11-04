@@ -10,23 +10,11 @@ h1, h2 {
 }
 
 .brand-color a{
-  color: #3a3a3a;
-  line-height: 69px;
+  color: gold;
 }
-* {
-  font-family: 'Open Sans', sans-serif;
-
-}
-a {
-  color: #8B0000;
-}
-
-
-
-
 
 #logo  {
-  color: #3a3a3a;
+   color: #3a3a3a;
 }
 
 #signed-in-as{
@@ -36,8 +24,13 @@ a {
 //nav
 #top-nav-bar {
   background-color: white;
-  box-shadow: 0 0 24px rgba(0,0,0,0.15);
+box-shadow: 0 0 24px rgba(0,0,0,0.15);
 }
+
+a {
+  color: #8B0000;
+}
+
 
 //exercise panels
 
@@ -61,6 +54,7 @@ a {
   color: white;
   background-color: #3a3a3a;
 }
+
 
 
 
