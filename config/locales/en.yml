@@ -23,5 +23,7 @@ en:
   hello: "Hello world"
   signup:
     title: "Yoked Sign Up"
+    button: "Sign up"
   login:
     title: "Login"
+    button: "Sign In"
