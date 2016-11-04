@@ -2,7 +2,7 @@
 
 <tr >
   <%if current_user%>
-  <%= link_to 'Run', new_user_exercise_run_path(current_user, exercise), class: " btn btn-success run-exercise" %>
+  <%= link_to "#{run.button}", new_user_exercise_run_path(current_user, exercise), class: " btn btn-success run-exercise" %>
   <%end%>
     <%= exercise.name %> ~ added by: <%= exercise.author.username %> || Rating-<%=exercise.rating%>/10 ||(<%= link_to "View", exercise %>)
 
