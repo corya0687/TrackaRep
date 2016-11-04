@@ -28,6 +28,14 @@ en:
     title: "Login"
     button: "Sign In"
   exercises:
-    added_by: "~added by:"
+    added_by: "added by:"
+    raiting: "Rating"
+    view: "View"
+    table:
+      sets: "Sets"
+      reps: "Reps"
+      rest: "Rest Period"
+      weight: "Weight"
+      repmax: "of 1 rep max"
   run:
     button: "Run"

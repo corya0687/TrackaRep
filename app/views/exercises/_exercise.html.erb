@@ -2,16 +2,16 @@
 
 <tr >
   <%if current_user%>
-  <%= link_to "#{run.button}", new_user_exercise_run_path(current_user, exercise), class: " btn btn-success run-exercise" %>
+  <%= link_to "#{t "run.button"}", new_user_exercise_run_path(current_user, exercise), class: " btn btn-success run-exercise" %>
   <%end%>
-    <%= exercise.name %> ~ added by: <%= exercise.author.username %> || Rating-<%=exercise.rating%>/10 ||(<%= link_to "View", exercise %>)
+    <%= exercise.name %> <%= "~#{t "exercises.added_by"}"%> <%= exercise.author.username %> || <%=t "exercises.raiting"%>-<%=exercise.rating%>/10 ||(<%= link_to "#{t "exercises.view"}", exercise %>)
 
 
   </tr>
   <tr>
-    <td>Sets</td> <td>Reps</td> <td>Rest Period</td> <td>Weight</td>
+    <td><%=t "exercises.table.sets"%></td> <td><%=t "exercises.table.reps"%></td> <td><%=t "exercises.table.rest"%></td> <td><%=t "exercises.table.weight"%></td>
   </tr>
   <tr>
-    <td><%=exercise.sets%></td><td><%=exercise.reps%></td><td><%=exercise.rest_period%></td><td><%=exercise.percentage_to_max%> of 1 rep max</td>
+    <td><%=exercise.sets%></td><td><%=exercise.reps%></td><td><%=exercise.rest_period%></td><td><%=exercise.percentage_to_max%> <%= t "exercises.table.repmax"%></td>
   </tr>
 </table>
