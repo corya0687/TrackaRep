@@ -5,7 +5,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  before_action :set_locale
+  
   layout :layout_by_resource
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   protected
 
