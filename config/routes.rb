@@ -1,26 +1,32 @@
 Rails.application.routes.draw do
 
-  resources :comments
-  resources :plans
-  resources :drills, only: [:index, :show]
+  devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
-  devise_for :users, :path => 'account', :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :comments
+    resources :plans
+    resources :drills, only: [:index, :show]
 
-  resources :workouts, only: [:index, :show]
+    devise_for :users, :path => 'account', skip: :omniauth_callbacks
 
-  resources :users do
-    resources :workouts, only: [:new, :destroy, :edit, :create, :update]
-    
-    resources :runs, only:[:index,:show]
+    resources :workouts, only: [:index, :show]
 
-    resources :exercises, only: [:new, :destroy, :edit, :create, :update] do
-      resources :runs do
-        resources :drills, except: [:index, :show]
+    resources :users do
+      resources :workouts, only: [:new, :destroy, :edit, :create, :update]
+
+      resources :runs, only:[:index,:show]
+
+      resources :exercises, only: [:new, :destroy, :edit, :create, :update] do
+        resources :runs do
+          resources :drills, except: [:index, :show]
+        end
       end
-
     end
+
+   resources :exercises, only: [:index, :show]
   end
-  resources :exercises, only: [:index, :show]
+
+
 
   root 'welcome#index'
 
