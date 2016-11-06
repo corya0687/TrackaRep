@@ -12,6 +12,8 @@ class Exercise < ActiveRecord::Base
 #  validates :rest_period, numericality: { only_integer: true }
   #validates :sets, numericality: { only_integer: true }
 
+  translates :name, :description
+
   def percentage_to_max
       "#{coefficents[self.reps]}%"
   end
