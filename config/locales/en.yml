@@ -89,3 +89,7 @@ en:
       no_author: "no author"
       rating: "Rating-"
       description: "Description-"
+      create: "Create New Workout"
+    index:
+      title: "Workouts"
+      my_workouts: "My Workouts"

@@ -1,7 +1,7 @@
 <div class="container">
-  <h2>Workouts </h2>&nbsp<%= link_to 'Create New Workout', new_user_workout_path(current_user) %>
+  <h2><%= t "workouts.index.title"%> </h2>&nbsp<%= link_to "#{t "workouts.workout.create"}", new_user_workout_path(current_user) %>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">My Workouts</a></li>
+    <li class="active"><a data-toggle="tab" href="#home"><%= t "workouts.index.my_workouts"%></a></li>
 
     <%MuscleGroup.all.each_with_index do |mg, i|%>
       <li><a data-toggle="tab" href="#menu<%=i+1%>"><%=mg.name%></a></li>
