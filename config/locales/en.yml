@@ -70,3 +70,11 @@ en:
       rest: "Rest Period"
       weight: "Weight"
       remove: "Remove this Exercise"
+    ex_table:
+      pick: "Pick"
+      name: "Name"
+      rating: "Rating"
+      sets: "Sets"
+      weight: "Weight"
+      reps: "Reps"
+      rest: "Rest(Min)"
