@@ -25,8 +25,9 @@
     </table>
   </div>
   <div class="panel-footer">
+    <%if exercise.author%>
     <span><%= "~#{t "exercises.added_by"}"%> <%= exercise.author.username %></span>
-
+    <%end%>
   </div>
 
 </div>
