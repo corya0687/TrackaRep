@@ -7,13 +7,13 @@ tl:
   welcome:
     recent_exercises: "Recently put on"
     see_all: "See All"
-    recent_Workouts: "Added Workouts"
+    recent_VERKOUTS: "Added VERKOUTS"
     runs:
       title: "Running around"
       exercise: "Moves"
       sets: "Drills"
       avg: "Averagie"
-      weight: "Weighty"
+      weight: "Veighty"
       durations: "Durationiner"
   signup:
     title: "Yoked Sign Up"
@@ -23,22 +23,22 @@ tl:
     button: "Sign In"
   exercises:
     index:
-      title: "Exercises"
-      my_exercises: "My Exercises"
-      create: "Create New Exercises"
+      title: "VEXERCISES"
+      my_exercises: "My VEXERCISES"
+      create: "Create New VEXERCISES"
     show:
     added_by: "added by:"
     rating: "Rating"
     view: "View"
     table:
-      sets: "Sets"
-      reps: "Reps"
-      rest: "Rest Period"
-      weight: "Weight"
+      sets: "VETS"
+      reps: "REPZZ"
+      rest: "SLEEP Period"
+      weight: "Veight"
       repmax: "of 1 rep max"
-    table:
+    new:
       title: "Create New Exercise"
-      rest: "Rest(secs)"
+      rest: "SLEEP(secs)"
       target_muscles: "Target Muscles"
     edit:
       title: "Edit Exercise"
@@ -51,31 +51,31 @@ tl:
       description: "Description"
       muscle_group: "Muscle Group"
       exercises:
-        title: "Exercises"
+        title: "VEXERCISES"
         name: "Name"
         rating: "Rating"
-        sets: "Sets"
-        weight: "Weight"
-        reps: "Reps"
-        rest: "Rest(Min)"
+        sets: "VETS"
+        weight: "Veight"
+        reps: "REPZZ"
+        rest: "SLEEP(Min)"
     add_exercises:
-      sets: "Sets"
-      reps: "Reps"
-      rest: "Rest Period"
-      weight: "Weight"
+      sets: "VETS"
+      reps: "REPZZ"
+      rest: "SLEEP Period"
+      weight: "Veight"
       remove: "Remove this Exercise"
     ex_table:
       pick: "Pick"
       name: "Name"
       rating: "Rating"
-      sets: "Sets"
-      weight: "Weight"
-      reps: "Reps"
-      rest: "Rest(Min)"
+      sets: "VETS"
+      weight: "Veight"
+      reps: "REPZZ"
+      rest: "SLEEP(Min)"
     form:
       muscle_group: "Muscle Group"
-      exercises: "Exercises"
-      my_exercises: "My Exercises"
+      exercises: "VEXERCISES"
+      my_exercises: "My VEXERCISES"
       create: "Create new Exercise:"
       add: "Add an Exercise"
     workout:
@@ -85,10 +85,10 @@ tl:
       description: "Description-"
       create: "Create New Workout"
     index:
-      title: "Workouts"
-      my_workouts: "My Workouts"
+      title: "VERKOUTS"
+      my_workouts: "My VERKOUTS"
     show:
-      exercises: "Workout Exercises"
+      exercises: "Workout VEXERCISES"
       comment: "Leave Comment"
       user: "Signed in as:"
       submit: "Submit Comment"
