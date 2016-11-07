@@ -34,7 +34,7 @@ en:
       create: "Create New Exercises"
     show:
     added_by: "added by:"
-    raiting: "Rating"
+    rating: "Rating"
     view: "View"
     table:
       sets: "Sets"
@@ -50,3 +50,23 @@ en:
       title: "Edit Exercise"
   run:
     button: "Run"
+  workouts:
+    display_workout:
+      changes: "Changes Made"
+      name: "Name"
+      description: "Description"
+      muscle_group: "Muscle Group"
+      exercises:
+        title: "Exercises"
+        name: "Name"
+        rating: "Rating"
+        sets: "Sets"
+        weight: "Weight"
+        reps: "Reps"
+        rest: "Rest(Min)"
+    add_exercises:
+      sets: "Sets"
+      reps: "Reps"
+      rest: "Rest Period"
+      weight: "Weight"
+      remove: "Remove this Exercise"
