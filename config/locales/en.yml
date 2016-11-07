@@ -84,3 +84,8 @@ en:
       my_exercises: "My Exercises"
       create: "Create new Exercise:"
       add: "Add an Exercise"
+    workout:
+      author: "~ added by:"
+      no_author: "no author"
+      rating: "Rating-"
+      description: "Description-"

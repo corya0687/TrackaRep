@@ -1,12 +1,12 @@
 <table class="table table-striped">
 
   <tr >
-    <%= workout.name %> ~ added by: <%= workout.author ? workout.author.username : "no author" %>(<%= link_to "View", workout_path(workout) %>)
+    <%= workout.name %> <%= t "workouts.workout.author"%> <%= workout.author ? workout.author.username : "#{ t "workouts.workout.no_author"}" %>(<%= link_to '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>'.html_safe , workout_path(workout) %>)
   </tr>
   <tr>
-    <td>Rating-<%=workout.avg_rating%>/10</td>
+    <td><%= t "workouts.workout.rating"%><%=workout.avg_rating%>/10</td>
   </tr>
   <tr>
-    <td>Description-<%=t workout.description%></td>
+    <td><%= t "workouts.workout.description"%><%= workout.description%></td>
   </tr>
 </table>
