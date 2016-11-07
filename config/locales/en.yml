@@ -32,6 +32,7 @@ en:
       title: "Exercises"
       my_exercises: "My Exercises"
       create: "Create New Exercises"
+    show:
     added_by: "added by:"
     raiting: "Rating"
     view: "View"
