@@ -93,3 +93,10 @@ en:
     index:
       title: "Workouts"
       my_workouts: "My Workouts"
+    show:
+      exercises: "Workout Exercises"
+      comment: "Leave Comment"
+      user: "Signed in as:"
+      submit: "Submit Comment"
+      current_c: "Current Comments on this workout"
+      no_comments: "There aren't any comments on this workout!"
