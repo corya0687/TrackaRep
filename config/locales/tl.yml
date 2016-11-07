@@ -9,3 +9,4 @@ tl:
       rest: "Time off"
       weight: "LBS"
       repmax: "of your MAX"
+      target_muscles: "Test TM's"
