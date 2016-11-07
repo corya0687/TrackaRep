@@ -24,11 +24,13 @@ Rails.application.routes.draw do
     end
 
    resources :exercises, only: [:index, :show]
+
+     root 'welcome#index'
   end
 
 
 
-  root 'welcome#index'
+
 
   # See how all your routes lay out with "rake routes".
 
