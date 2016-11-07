@@ -16,17 +16,17 @@ class Run < ActiveRecord::Base
   end
 
   def workout_attached
-    self.workout || self.one_off
+   self.workout ? self.workout : Workout.new(name: "One Off")
   end
-
-  def one_off
-    self.active_one_off || self.add_to_one_off
-  end
-
-  def add_to_one_off
-    w = Workout.where(name:"One Off").first.runs << self
-    w.save
-  end
+  #
+  # def one_off
+  #   self.active_one_off || self.add_to_one_off
+  # end
+  #
+  # # def add_to_one_off
+  # #   w = Workout.where(name:"One Off").first.runs << self
+  # #   w.save
+  # # end
 
   def active_one_off
     Workout.where(created_at: (Time.now - 3.hours)..Time.now).where(name:"One Off").first

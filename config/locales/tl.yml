@@ -1,12 +1,96 @@
 tl:
-  exercises:
-    added_by: "this guy did this :"
-    rating: "Feeling"
-    view: "see"
-    table:
+  hello: "Hello world"
+  nav:
+    workouts: "VUDUULU"
+    exercises: "VERSACI"
+    logout: "Logouter"
+  welcome:
+    recent_exercises: "Recently put on"
+    see_all: "See All"
+    recent_Workouts: "Added Workouts"
+    runs:
+      title: "Running around"
+      exercise: "Moves"
       sets: "Drills"
-      reps: "REPZ"
-      rest: "Time off"
-      weight: "kgs"
-      repmax: "of your MAX"
-      target_muscles: "Test TM's"
+      avg: "Averagie"
+      weight: "Weighty"
+      durations: "Durationiner"
+  signup:
+    title: "Yoked Sign Up"
+    button: "Sign up"
+  login:
+    title: "Login"
+    button: "Sign In"
+  exercises:
+    index:
+      title: "Exercises"
+      my_exercises: "My Exercises"
+      create: "Create New Exercises"
+    show:
+    added_by: "added by:"
+    rating: "Rating"
+    view: "View"
+    table:
+      sets: "Sets"
+      reps: "Reps"
+      rest: "Rest Period"
+      weight: "Weight"
+      repmax: "of 1 rep max"
+    table:
+      title: "Create New Exercise"
+      rest: "Rest(secs)"
+      target_muscles: "Target Muscles"
+    edit:
+      title: "Edit Exercise"
+  run:
+    button: "Run"
+  workouts:
+    display_workout:
+      changes: "Changes Made"
+      name: "Name"
+      description: "Description"
+      muscle_group: "Muscle Group"
+      exercises:
+        title: "Exercises"
+        name: "Name"
+        rating: "Rating"
+        sets: "Sets"
+        weight: "Weight"
+        reps: "Reps"
+        rest: "Rest(Min)"
+    add_exercises:
+      sets: "Sets"
+      reps: "Reps"
+      rest: "Rest Period"
+      weight: "Weight"
+      remove: "Remove this Exercise"
+    ex_table:
+      pick: "Pick"
+      name: "Name"
+      rating: "Rating"
+      sets: "Sets"
+      weight: "Weight"
+      reps: "Reps"
+      rest: "Rest(Min)"
+    form:
+      muscle_group: "Muscle Group"
+      exercises: "Exercises"
+      my_exercises: "My Exercises"
+      create: "Create new Exercise:"
+      add: "Add an Exercise"
+    workout:
+      author: "~ added by:"
+      no_author: "no author"
+      rating: "Rating-"
+      description: "Description-"
+      create: "Create New Workout"
+    index:
+      title: "Workouts"
+      my_workouts: "My Workouts"
+    show:
+      exercises: "Workout Exercises"
+      comment: "Leave Comment"
+      user: "Signed in as:"
+      submit: "Submit Comment"
+      current_c: "Current Comments on this workout"
+      no_comments: "There aren't any comments on this workout!"

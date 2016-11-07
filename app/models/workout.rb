@@ -16,6 +16,8 @@ class Workout < ActiveRecord::Base
 
    accepts_nested_attributes_for :exercises, :reject_if => :all_blank, :allow_destroy => true
 
+  translates :name, :description
+
 
   def exercise_attributes=(attributes)
     binding.pry

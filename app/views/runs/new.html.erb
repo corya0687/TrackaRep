@@ -1,11 +1,14 @@
 <div class="row exercise-run page-header ">
+
   <div class="col-md-4">
     <button type="button" id="start-run" class="btn btn-success inline-header">Start Now</button>
     </div>
+    
     <div class="col-md-4 exercise-timer">
       <time class="inline-header" id="duration-timer" >00:00</time>
       <p id="total-time-desc">Exercise Duration</p>
     </div>
+
     <div class="col-md-offset-10">
       <a class="btn btn-danger" id="end-run" href=" <%=user_exercise_run_path(current_user, @exercise, @run)%>" data-href=" <%=user_exercise_run_path(current_user, @exercise, @run)%>">Finish</a>
     </div>

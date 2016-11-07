@@ -1,7 +1,7 @@
 <%@runs.each do |run|%>
 <table class="table">
   <tr>
-      <%=run.workout_attached.name%>
+      <%=run.workout_attached%>
     <th>
       Date: <%=run.workout_attached.updated_at.strftime("%d/%m/%Y")%>
     </th>

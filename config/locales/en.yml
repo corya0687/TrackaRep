@@ -21,6 +21,21 @@
 
 en:
   hello: "Hello world"
+  nav:
+    workouts: "Workouts"
+    exercises: "Exercises"
+    logout: "Logout"
+  welcome:
+    recent_exercises: "Recently Added Exercises"
+    see_all: "See All"
+    recent_Workouts: "Recently Added Workouts"
+    runs:
+      title: "Your Recent Runs"
+      exercise: "Exercise"
+      sets: "Sets"
+      avg: "Avg"
+      weight: "Weight"
+      durations: "Duration"
   signup:
     title: "Yoked Sign Up"
     button: "Sign up"

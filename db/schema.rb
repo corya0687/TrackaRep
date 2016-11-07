@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106215338) do
+ActiveRecord::Schema.define(version: 20161107044726) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -150,11 +150,21 @@ ActiveRecord::Schema.define(version: 20161106215338) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "workouts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
+  create_table "workout_translations", force: :cascade do |t|
+    t.integer  "workout_id",  null: false
+    t.string   "locale",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.string   "description"
+  end
+
+  add_index "workout_translations", ["locale"], name: "index_workout_translations_on_locale"
+  add_index "workout_translations", ["workout_id"], name: "index_workout_translations_on_workout_id"
+
+  create_table "workouts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "author_id"
   end
 
