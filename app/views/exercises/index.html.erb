@@ -1,8 +1,8 @@
 
 <div class="container">
-  <h2>Exercises </h2>&nbsp<%= link_to 'Create New Exercise', new_user_exercise_path(current_user) %>
+  <h2><%= t "exercises.index.title"%> </h2>&nbsp<%= link_to "#{t "exercises.index.create"}", new_user_exercise_path(current_user) %>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">My Exercises</a></li>
+    <li class="active"><a data-toggle="tab" href="#home"><%= t "exercises.index.my_exercises"%></a></li>
 
     <%TargetMuscle.all.each_with_index do |tm, i|%>
       <li><a data-toggle="tab" href="#menu<%=i+1%>"><%=tm.name%></a></li>

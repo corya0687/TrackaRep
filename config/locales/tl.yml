@@ -1,12 +1,12 @@
 tl:
   exercises:
     added_by: "this guy did this :"
-    raiting: "Feeling"
+    rating: "Feeling"
     view: "see"
     table:
       sets: "Drills"
       reps: "REPZ"
       rest: "Time off"
-      weight: "LBS"
+      weight: "kgs"
       repmax: "of your MAX"
       target_muscles: "Test TM's"
