@@ -1,12 +1,12 @@
 <%=f.text_field :name, class: "workout_fields"%>
 <%=f.text_field :description, class: "workout_fields"%>
 <%=f.hidden_field :author_id, :value => current_user.id%>
-<%= f.collection_check_boxes :muscle_group_ids, MuscleGroup.all, :id, :name, label: "Muscle Groups", class: "checkbox-inline"%>
+<%= f.collection_check_boxes :muscle_group_ids, MuscleGroup.all, :id, :name, label: "#{t "workouts.form.muscle_group"}", class: "checkbox-inline"%>
 
 <div class="container custom_container">
-  <h2>Exercises </h2>
+  <h2><%= t "workouts.form.exercises"%></h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">My Exercises</a></li>
+    <li class="active"><a data-toggle="tab" href="#home"><%= t "workouts.form.my_exercises"%></a></li>
   </ul>
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-    <h3>Create New Exercise:</h3>
+    <h3><%= t "workouts.form.create"%></h3>
     <div class="add-exercise-fields">
       <%exercise_holder = @workout.exercises%>
       <%@workout.exercises = []%>
@@ -28,6 +28,6 @@
 </div>
 
 <%end%>
-<p><%= f.link_to_add '"Add a Exercise"', :exercises %></p>
+<p><%= f.link_to_add "#{t "workouts.form.add"}", :exercises %></p>
 
 <%=f.submit %>

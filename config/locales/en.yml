@@ -78,3 +78,9 @@ en:
       weight: "Weight"
       reps: "Reps"
       rest: "Rest(Min)"
+    form:
+      muscle_group: "Muscle Group"
+      exercises: "Exercises"
+      my_exercises: "My Exercises"
+      create: "Create new Exercise:"
+      add: "Add an Exercise"
