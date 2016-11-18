@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
    resources :exercises, only: [:index, :show]
 
-     root 'welcome#index'
+     root 'welcome#home'
   end
 
 
