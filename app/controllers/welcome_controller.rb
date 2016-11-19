@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
- before_action :authenticate_user!, :only => [:index] 
+
+
+ before_action :authenticate_user!, :only => [:index]
 
   def index
     @exercises = Exercise.paginate(page: params[:page], per_page: 3)
@@ -8,6 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def home
+    render :layout => false
 
   end
 
