@@ -10,8 +10,12 @@ class WelcomeController < ApplicationController
   end
 
   def home
-    render :layout => false
-
+    if !current_user
+      render :layout => false
+      @workouts = Workout.paginate(page: params[:page], per_page: 3)
+    else
+      redirect_to index_path
+    end
   end
 
 

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
 
    resources :exercises, only: [:index, :show]
+   get 'index', to: 'welcome#index'
 
      root 'welcome#home'
   end

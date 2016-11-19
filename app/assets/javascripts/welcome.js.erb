@@ -41,7 +41,6 @@ Run.prototype.avgWeight = function () {
 
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
-    debugger;
     let run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
     displayRun(run);
   });
