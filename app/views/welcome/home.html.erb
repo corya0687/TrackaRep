@@ -31,18 +31,18 @@
       <button id="home-main-btn" type="button" name="button"> Run Live Workout</button>
     </div>
 
-
 </section>
 
-<div class="">
-  <div class="">
-  This is a workout
+<div class="container">
+  <div class="home-workouts">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="page-header">Recently Added Workouts </h4>
+        <%=render partial: "workouts/workout", collection: @workouts%>
+        <%= link_to "#{t "welcome.see_all"}", workouts_path%>
+      </div>
   </div>
 </div>
-
-
-
-
 
 </body>
 </html>

@@ -35,20 +35,18 @@ h1, h2 {
  }
 
  .home-row {
-   background-color: #000;
    color: white;
-   opacity: .2;
+
  }
 
- .home-row p {
+ .home-row {
    color: white;
-   opacity: .9;
  }
 
  .home-btn {
     padding: 3rem;
     position: relative;
-    top: 45%;
+    top: 40%;
     left: 44%;
     transform: translateY(-50%);
   }
