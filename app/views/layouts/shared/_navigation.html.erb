@@ -14,9 +14,11 @@
 
   </div>
   <%if current_user%>
-    <h5 id="signed-in-as" class="inline-header pull-right"> Username- <%=current_user.username%></h5>
+    <%= link_to "#{t "nav.logout"}", destroy_user_session_path,:method => :delete, class:"fa fa-sign-out fa-fw"%>
   <%end%>
-  <%=render partial: "layouts/shared/navigation/utility"%>
+  <% if current_user %>
+    <h5 id="signed-in-as" class="inline-header pull-right"> Username- <%=current_user.username%></h5>
+  <% end %>
 
   <div id="sidebar-nav" class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">

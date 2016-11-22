@@ -13,36 +13,38 @@
 </head>
 
 
-<body >
-<section class="home-cont">
+<body>
+  <section class="home-cont">
+    <div class="container">
+      <div class="row home-row">
+        <div class="col-md-4">
+          <h1>Yoked</h1>
+        </div>
+        <div class="col-md-8 nav">
+          <a href="/account/sign_up"><h4 class= "nav-items">Signup</h4></a>
+          <a href="/account/sign_in"><h4 class= "nav-items">Login</h4></a>
+        </div>
+      </div>
+    </div>
+
+      <div class="home-btn">
+        <button id="home-main-btn" type="button" name="button"> Run Live Workout</button>
+      </div>
+
+
+  </section>
+
   <div class="container">
-    <div class="row home-row">
-      <div class="col-md-4">
-        <h1>Yoked</h1>
-      </div>
-      <div class="col-md-8">
-        <h4 class= "nav-items">Signup</h4>
-        <h4 class="nav-items">Login</h4>
+    <div class="home-workouts">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="page-header">Recently Added Workouts </h4>
+          <%= render partial: "workouts/home_workout", collection: @workouts, as: :workout%>
+          <%= link_to "#{t "welcome.see_all"}", workouts_path %>
+        </div>
       </div>
     </div>
   </div>
-
-    <div class="home-btn">
-      <button id="home-main-btn" type="button" name="button"> Run Live Workout</button>
-    </div>
-
-</section>
-
-<div class="container">
-  <div class="home-workouts">
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="page-header">Recently Added Workouts </h4>
-        <%=render partial: "workouts/workout", collection: @workouts%>
-        <%= link_to "#{t "welcome.see_all"}", workouts_path%>
-      </div>
-  </div>
-</div>
 
 </body>
 </html>

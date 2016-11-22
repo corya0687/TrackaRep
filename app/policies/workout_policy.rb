@@ -1,4 +1,4 @@
-class ExercisePolicy < ApplicationPolicy
+class WorkoutPolicy < ApplicationPolicy
 
   def new?
     !user.nil?

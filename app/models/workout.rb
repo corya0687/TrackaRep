@@ -20,7 +20,6 @@ class Workout < ActiveRecord::Base
 
 
   def exercise_attributes=(attributes)
-    binding.pry
     names= attributes[:name].split(", ")
     names.each do |exercise_name|
       if Exercise.exists?(name: exercise_name)
@@ -44,6 +43,8 @@ class Workout < ActiveRecord::Base
       we.id == exercise.id
     end
   end
+
+
 
 
 end

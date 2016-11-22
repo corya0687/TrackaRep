@@ -10,7 +10,6 @@
   <div class="panel-body panel_w_table">
     <table class="table table_in_panel">
       <tr >
-        <%binding.pry%>
         <%= workout.name %>
       </tr>
       <tr>
@@ -21,6 +20,7 @@
       </tr>
     </table>
   </div>
+
   <div class="panel-footer">
     <%if workout.author%>
     <span><%= t "workouts.workout.author"%> <%= workout.author ? workout.author.username : "#{ t "workouts.workout.no_author"}" %></span>
