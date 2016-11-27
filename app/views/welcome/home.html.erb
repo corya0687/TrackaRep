@@ -38,13 +38,17 @@
     <div class="home-workouts">
       <div class="row">
         <div class="col-md-12">
-          <h4 class="page-header">Recently Added Workouts </h4>
+          <h4 class="page-header text-center">Recently Added Workouts </h4>
           <%= render partial: "workouts/home_workout", collection: @workouts, as: :workout%>
           <%= link_to "#{t "welcome.see_all"}", workouts_path %>
         </div>
       </div>
     </div>
   </div>
+  <footer class="footer">
+    <%= render "footer"%>
+  </footer>
+
 
 </body>
 </html>

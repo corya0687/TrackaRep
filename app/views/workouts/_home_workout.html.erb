@@ -1,14 +1,12 @@
-<div class="panel panel-default">
-  <div class="home-wk-panel">
-    <%= link_to workout.name, workout %>
-    <%= image_tag "#{workout.muscle_groups.first.name}.png", size: "100x100"%>
-  </div>
-    <%= workout.name %>
+<div class="panel panel-default home-wk-panel col-md-3">
+  <%= link_to workout.name, workout %>
+    <span class="">
+      <%= image_tag "#{workout.muscle_groups.first.name}.png", size: "100x100"%>
+    </span>
 
-    <%= t "workouts.workout.rating" %><%= workout.avg_rating %>/10
-    <%= t "workouts.workout.description"%><%= workout.description %>
+      <%= t "workouts.workout.rating" %>
 
-  <%if workout.author%>
-    <span><%= t "workouts.workout.author"%> <%= workout.author ? workout.author.username : "#{ t "workouts.workout.no_author"}" %></span>
-  <%end%>
+    <%if workout.author%>
+      <span><%= t "workouts.workout.author"%> <%= workout.author ? workout.author.username : "#{ t "workouts.workout.no_author"}" %></span>
+    <%end%>
 </div>

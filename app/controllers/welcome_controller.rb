@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
 
   def home
     if !current_user
-      @workouts = Workout.paginate(page: params[:page], per_page: 3)
+      @workouts = Workout.paginate(page: params[:page], per_page: 8)
       render :layout => false
     else
       redirect_to index_path
