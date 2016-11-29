@@ -196,6 +196,8 @@ Devise.setup do |config|
   # change their passwords.
   config.reset_password_within = 6.hours
 
+  config.secret_key = '8a4463feb03ff8dee0a527b28de04f08c1bfe3d87d8e1faa13389707d8aa1413ba79891ba1421654e083a59e60d207c42250c997ebd1628fd962be89e687849e'
+
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
   # config.sign_in_after_reset_password = true
