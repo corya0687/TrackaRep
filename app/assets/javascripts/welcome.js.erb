@@ -8,7 +8,7 @@ $(function () {
 });
 
 function recentRuns() {
-    let user_id =$("#see-all-ran").attr("href")
+    var user_id =$("#see-all-ran").attr("href")
     if (user_id) {
       user_id = user_id.match(/\d+/)[0]
       $.get('/users/'+user_id+'/runs.json',function (response) {
@@ -41,7 +41,7 @@ Run.prototype.avgWeight = function () {
 
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
-    let run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
+    var run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
     displayRun(run);
   });
 }

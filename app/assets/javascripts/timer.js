@@ -40,7 +40,7 @@ function endSet() {
 }
 
 function incrementSet() {
-  let set = parseInt($("#current-set").text())
+  var set = parseInt($("#current-set").text())
   $("#current-set").text(set + 1)
   $("#weight-input").val("")
   $("#rep-input").val("")
@@ -67,7 +67,7 @@ function createSet(event) {
     }
   }
 
-  let url = $('#new_drill').attr('action')
+  var url = $('#new_drill').attr('action')
   $.ajax({
     url: url,
     method: 'POST',
