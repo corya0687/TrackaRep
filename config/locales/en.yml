@@ -37,7 +37,7 @@ en:
       weight: "Weight"
       durations: "Duration"
   signup:
-    title: "Yoked Sign Up"
+    title: "TrackaRep Sign Up"
     button: "Sign up"
   login:
     title: "Login"
