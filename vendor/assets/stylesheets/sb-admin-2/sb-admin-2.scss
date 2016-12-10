@@ -42,12 +42,20 @@ h1, h2 {
    padding: 0px;
    margin: 0px;
    display: inline;
+   font-size: 14px;
  }
 
  #workout-run-input {
    padding: 0px;
    margin: 0px;
    display: inline;
+   border: 0px solid;
+   font-size: 14px;
+ }
+
+
+ #workout-run-input :focus {
+   border: 0px solid;
  }
 
  .footer {

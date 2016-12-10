@@ -1,7 +1,7 @@
 <div class="row text-center">
-  <h3 id="workout-header">New Workout</h3>
+  <p id="workout-header">New Workout</p>
   <%= form_for Workout.new do |f| %>
-    <%=f.text_field :name, id: "workout-run-input" %>
+    <%=f.text_field :name, id: "workout-run-input", class: "text-center" %>
   <%end%>
 
 <span class="edit-buttons">
