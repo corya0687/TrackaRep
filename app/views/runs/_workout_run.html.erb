@@ -1,0 +1,13 @@
+<div class="row text-center">
+  <h3 id="workout-header">New Workout</h3>
+  <%= form_for Workout.new do |f| %>
+    <%=f.text_field :name, id: "workout-run-input" %>
+  <%end%>
+
+<span class="edit-buttons">
+  <span id="edit-workout-name" class="glyphicon glyphicon-pencil"></span>
+  <span id="save-workout-name" class="glyphicon glyphicon-ok"></span>
+</span>
+
+
+</div>

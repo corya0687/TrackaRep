@@ -3,7 +3,7 @@
   <div class="col-md-4">
     <button type="button" id="start-run" class="btn btn-success inline-header">Start Now</button>
     </div>
-    
+
     <div class="col-md-4 exercise-timer">
       <time class="inline-header" id="duration-timer" >00:00</time>
       <p id="total-time-desc">Exercise Duration</p>
@@ -14,6 +14,7 @@
     </div>
   </div>
 
+  <%=render partial: "workout_run" %>
   <%=render partial: "set"%>
   <%=render partial: "rest_timer"%>
   <%=render partial: "exercise_status"%>
