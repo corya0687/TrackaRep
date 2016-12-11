@@ -2,6 +2,8 @@ $(document).ready(function () {
   attachRunListners();
 })
 
+var workout;
+
 function attachRunListners() {
   loadWorkout();
   startExercise();
@@ -70,10 +72,8 @@ function loadWorkout() {
   var url = $("html")[0].baseURI
   var url = url.split("workouts/")
   var workout_id = url[1].match(/\d/)[0];
-  debugger;
   $.get("/workouts/" +workout_id+ ".json", function ( data ) {
-    var workout = new Workout(data.id, data.name, data.description, data.exercises)
-    debugger;
+    workout = new Workout(data.id, data.name, data.description, data.exercises)
   });
 }
 

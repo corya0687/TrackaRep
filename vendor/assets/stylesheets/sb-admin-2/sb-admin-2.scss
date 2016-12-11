@@ -53,10 +53,21 @@ h1, h2 {
    font-size: 14px;
  }
 
-
- #workout-run-input :focus {
-   border: 0px solid;
+ .workout-run {
+   display: inline;
  }
+
+ .edit_workout {
+   display: inline;
+ }
+
+ #workout-run-input form {
+   display: inline;
+ }
+
+.run_workout_name {
+  display: inline;
+}
 
  .footer {
    background-color: #696969;

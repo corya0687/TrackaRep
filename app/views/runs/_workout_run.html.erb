@@ -1,11 +1,11 @@
-<div class="row text-center">
-  <p id="workout-header"><%=@workout.name%></p>
+<div class="row workout-run">
+  <span id="workout-header"><%=@workout.name%></span>
   <%= form_for @workout do |f| %>
-    <%=f.text_field :name, id: "workout-run-input", class: "text-center" %>
+    <%=f.text_field :name, id: "workout-run-input" %>
   <%end%>
 
 <span class="edit-buttons">
-  <div id="edit-workout-name" class="glyphicon glyphicon-pencil"></div>
+  <span id="edit-workout-name" class="glyphicon glyphicon-pencil"></span>
   <span id="save-workout-name" class="glyphicon glyphicon-ok"></span>
 </span>
 
