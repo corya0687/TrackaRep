@@ -14,7 +14,10 @@
     </div>
   </div>
 
-  <%=render partial: "workout_run" %>
-  <%=render partial: "set"%>
-  <%=render partial: "rest_timer"%>
-  <%=render partial: "exercise_status"%>
+  <% if @workout %>
+    <%=render partial: "workout_run" %>
+  <%else%>
+    <%=render partial: "set"%>
+    <%=render partial: "rest_timer"%>
+    <%=render partial: "exercise_status"%>
+  <% end %>

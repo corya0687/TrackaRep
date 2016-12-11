@@ -1,34 +1,16 @@
 <h4 class="inline-header">Exercise</h4>
 
+<% if @exercise%>
 <h5 class="inline-header">|<%=@exercise.name%>|</h5>
+<%else%>
+  <p id="add-15-secs" class="glyphicon glyphicon-plus btn btn-default"></p>
+<%end%>
 
 <p class="inline-header">Set-</p><div class="inline-header" id="current-set">1</div>
 <div id="run-main" >
 <div id="drill-fields" class="drill-fields-pause">
 
-<%=nested_form_for [current_user, @exercise, @run, @drill] do |f|%>
+<%=render "record_set"%>
 
-<table>
-  <th>#</th>
-  <th class="input-header"><h4>Weight</h4></th>
-  <th class="input-header"><h4>Reps</h4></th>
-  <th></th>
-  <tr>
-    <td><h5>Enter Actual</h5></td>
-  <td><%=f.text_field :weight, id:"weight-input", class: "run-inputs"%></td>
-  <td><%=f.text_field :reps, id: "rep-input", class: "run-inputs"%></td>
-  <td><%=f.submit 'End Set', id:"end-set", class: "btn btn-primary"%><p id="end-set-instructions">*start rest period</p></td>
-</tr>
-
-  <tr>
-    <td>Target</td>
-    <td><%=@exercise.weight%></td>
-    <td><%=@exercise.reps%></td>
-    <td></td>
-  </tr>
-
-</table>
-
-  <%end%>
 </div>
 </div>

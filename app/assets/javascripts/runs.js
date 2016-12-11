@@ -8,7 +8,6 @@ function attachRunListeners() {
   setRunDataUrl();
   editWorkout();
   showWorkoutHeader();
-
 }
 
 function setRunDataUrl() {
@@ -45,6 +44,7 @@ function editWorkout() {
     $("#workout-run-input").val(wkHeader)
   });
 }
+
 
 function showWorkoutHeader() {
   $("#save-workout-name").on('click', function () {

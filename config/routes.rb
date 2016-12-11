@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     resources :workouts, only: [:index, :show]
 
     resources :users do
-      resources :workouts, only: [:new, :destroy, :edit, :create, :update]
+      resources :workouts, only: [:new, :destroy, :edit, :create, :update] do
+        resources :runs do
+          resources :drills, except: [:index, :show]
+        end
+      end
 
       resources :runs, only:[:index,:show]
 
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
       end
     end
 
+   resources :workouts, only: [:index, :show]
    resources :exercises, only: [:index, :show]
    get 'index', to: 'welcome#index'
 

@@ -9,9 +9,11 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-
-    @comment = Comment.new
-    @comments = @workout.comments
+    # @comment = Comment.new
+    # @comments = @workout.comments
+    respond_to do |format|
+      format.json { render json: @workout }
+    end
   end
 
   def new

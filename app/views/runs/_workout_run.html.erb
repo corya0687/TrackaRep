@@ -1,13 +1,16 @@
 <div class="row text-center">
-  <p id="workout-header">New Workout</p>
-  <%= form_for Workout.new do |f| %>
+  <p id="workout-header"><%=@workout.name%></p>
+  <%= form_for @workout do |f| %>
     <%=f.text_field :name, id: "workout-run-input", class: "text-center" %>
   <%end%>
 
 <span class="edit-buttons">
-  <span id="edit-workout-name" class="glyphicon glyphicon-pencil"></span>
+  <div id="edit-workout-name" class="glyphicon glyphicon-pencil"></div>
   <span id="save-workout-name" class="glyphicon glyphicon-ok"></span>
 </span>
 
+<%=render partial: "set"%>
+<%=render partial: "rest_timer"%>
+<%=render partial: "exercise_status"%>
 
 </div>

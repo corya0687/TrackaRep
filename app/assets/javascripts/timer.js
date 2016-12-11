@@ -3,6 +3,7 @@ $(document).ready(function () {
 })
 
 function attachRunListners() {
+  loadWorkout();
   startExercise();
   endSet();
   hideRestTimer();
@@ -34,6 +35,7 @@ function endSet() {
     fillStatus();
     $("#drill-fields").toggleClass("drill-fields-pause")
     //$("#run-main").html($("#rest-timer-all").html())
+
     createSet();
     event.preventDefault();
   });
@@ -55,6 +57,32 @@ function captureSetData() {
 
 function fillStatus() {
   $("#exercise-status-table tbody").append("<tr><td>"+setNumber+"</td><td>" +weightInput+"</td><td>"+repInput+"</td><td>"+restInput+"</td><td></td></tr>")
+}
+
+function Workout(id, name, description, exercises){
+  this.id = id;
+  this.name = name;
+  this.description = description;
+  this.exercises = exercises;
+}
+
+function loadWorkout() {
+  var url = $("html")[0].baseURI
+  var url = url.split("workouts/")
+  var workout_id = url[1].match(/\d/)[0];
+  debugger;
+  $.get("/workouts/" +workout_id+ ".json", function ( data ) {
+    var workout = new Workout(data.id, data.name, data.description, data.exercises)
+    debugger;
+  });
+}
+
+function loadWorkoutExercises() {
+
+  // $.get("/exercises/"+exercise_id+".json", function( data ) {
+  //   var exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period)
+  //     $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period+"</td></tr>")
+  // });
 }
 
 function createSet(event) {
