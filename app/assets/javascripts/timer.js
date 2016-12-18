@@ -3,6 +3,9 @@ $(document).ready(function () {
 })
 
 var workout;
+var currentExercise;
+var exerciseIndex;
+var exercises;
 
 function attachRunListners() {
   loadWorkout();
@@ -35,7 +38,7 @@ function endSet() {
     shorten30Secs();
     captureSetData();
     fillStatus();
-    $("#drill-fields").toggleClass("drill-fields-pause")
+    $("#drill-fields").toggleClass("drill-fields-pause");
     //$("#run-main").html($("#rest-timer-all").html())
 
     createSet();
@@ -45,9 +48,19 @@ function endSet() {
 
 function incrementSet() {
   var set = parseInt($("#current-set").text())
-  $("#current-set").text(set + 1)
-  $("#weight-input").val("")
-  $("#rep-input").val("")
+  if (set >= currentExercise.sets) {
+    incrementExercise();
+  } else {
+    $("#current-set").text(set + 1)
+    $("#weight-input").val("")
+    $("#rep-input").val("")
+  }
+}
+
+function incrementExercise(){
+  exerciseIndex += 1;
+  currentExercise = workout.exercises[exerciseIndex];
+  displayExercise();
 }
 
 function captureSetData() {
@@ -74,15 +87,25 @@ function loadWorkout() {
   var workout_id = url[1].match(/\d/)[0];
   $.get("/workouts/" +workout_id+ ".json", function ( data ) {
     workout = new Workout(data.id, data.name, data.description, data.exercises)
+    exerciseIndex = 0;
+    currentExercise = workout.exercises[exerciseIndex];
   });
 }
 
-function loadWorkoutExercises() {
+function Exercise(id, name, sets, reps, weight, rest_period) {
+  this.id = idea;
+  this.name = name;
+  this.sets = sets;
+  this.reps = reps;
+  this.weight = weight;
+  this.rest_period = rest_period;
+}
 
-  // $.get("/exercises/"+exercise_id+".json", function( data ) {
-  //   var exercise = new Exercise(data.id, data.name, data.sets, data.reps, data.rating, data.weight, data.rest_period)
-  //     $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+exercise.name+"</td><td>"+exercise.rating+"</td><td>"+exercise.sets+"</td><td>"+exercise.weight+"</td><td>"+exercise.reps+"</td><td>"+exercise.rest_period+"</td></tr>")
-  // });
+
+
+function displayExercise() {
+  debugger;
+  $("#set-exercise-name").text(currentExercise.name)
 }
 
 function createSet(event) {

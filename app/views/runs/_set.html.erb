@@ -1,12 +1,12 @@
-<h4 class="inline-header">Exercise</h4>
+<h4 >Exercise</h4>
 
 <% if @exercise%>
-<h5 class="inline-header">|<%=@exercise.name%>|</h5>
+  <span id="set-exercise-name">|<%=@exercise.name%>|</span>
 <%else%>
-  <p id="add-15-secs" class="glyphicon glyphicon-plus btn btn-default"></p>
+  <!-- <p id="add-15-secs" class="glyphicon glyphicon-plus btn btn-default"></p> -->
 <%end%>
 
-<p class="inline-header">Set-</p><div class="inline-header" id="current-set">1</div>
+<span> Set-</span><span id="current-set">1</span>
 <div id="run-main" >
 <div id="drill-fields" class="drill-fields-pause">
 

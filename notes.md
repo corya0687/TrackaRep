@@ -66,3 +66,9 @@ Bugs-
 ####Features
 1. Shows plate combination based off desired weight
 2.
+
+
+###Stories
+1. Need to figure out how to load each exercise in javascript to set and make it to where you can navigate.
+
+Trying to track index in workout exercises array.
