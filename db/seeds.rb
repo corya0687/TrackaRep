@@ -11,9 +11,3 @@
 ##--> Add Musclses
 #philly lat/long = 39.9526/-75.1652
 #range = 0.05
-
-
-User.all.each do |user|
-  user.longtitude = rand(-75.21...-75.11)
-  user.save
-end

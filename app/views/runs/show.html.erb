@@ -1,4 +1,4 @@
 <h2 class"page-header">Run Summary</h2>
-<h4 class="inline-header"><%=@run.exercise.name%></h4>
+<h4 class="inline-header"><%= @run.exercise.try(:name) %></h4>
 <p class="inline-header">Total Time <%=@run.duration%> Seconds</p>
 <%=render partial: "exercise_status", locals: {drills: @run.drills}%>

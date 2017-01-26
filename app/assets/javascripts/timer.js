@@ -49,6 +49,7 @@ function endSet() {
 function incrementSet() {
   var set = parseInt($("#current-set").text())
   if (set >= currentExercise.sets) {
+    set = 1;
     incrementExercise();
   } else {
     $("#current-set").text(set + 1)
@@ -104,8 +105,8 @@ function Exercise(id, name, sets, reps, weight, rest_period) {
 
 
 function displayExercise() {
-  debugger;
   $("#set-exercise-name").text(currentExercise.name)
+  $("#current-set").text(1)
 }
 
 function createSet(event) {
