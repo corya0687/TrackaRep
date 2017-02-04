@@ -1,6 +1,6 @@
 <div class="row workout-run">
   <span id="workout-header"><%=@workout.name%></span>
-  <%= form_for @workout do |f| %>
+  <%= form_for @workout, do |f| %>
     <%=f.text_field :name, id: "workout-run-input" %>
   <%end%>
 

@@ -29,6 +29,19 @@ class Workout < ActiveRecord::Base
     end
   end
 
+  def set_exercise(exercise_id)
+    if exercise_id
+      exercise = Exercise.find(exercise_id)
+    else
+      if self.exercises.count == 0
+        exercise = OneOffExercise.new
+      else
+        exercise = @workout.exercises.first
+      end
+    end
+    exercise
+  end
+
   def avg_rating
     return unless self.exercises.size != 0
     avg = self.exercises.inject(0){|sum,exercise| sum + exercise.rating if !exercise.rating.nil?}

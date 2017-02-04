@@ -12,20 +12,9 @@ class RunsController < ApplicationController
   end
 
   def new
-    if params[:workout_id]
-      @workout = Workout.find(params[:workout_id])
-      @run = @workout.runs.build
-      if @workout.exercises.count == 0
-        @exercise = @workout.exercises.create(name: "Untitled Exercises", description: "New Exercise")
-      else
-        @exercise = @workout.exercises.first
-      end
-    elsif params[:exercise_id]
-      @exercise = Exercise.find(params[:exercise_id])
-      @run = @exercise.runs.build
-      @workout = @exercise.workouts.build(name:"Untitled Workout", description: "One off workout created on the fly")
-    end
-
+    params[:workout_id] ?  @workout  = Workout.find(params[:workout_id]) : @workout = Workout.new
+    @run = @workout.runs.build
+    @exercise = @workout.set_exercise(params[:exercise_id])
     @run.user_id = current_user.id
     @run.save
     @drill = @run.drills.build
