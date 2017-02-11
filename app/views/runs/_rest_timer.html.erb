@@ -12,3 +12,35 @@
 
   </table>
 </div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <table id="new-exercise-run-table" class=" table col-md-6">
+       <caption>New Exercise</caption>
+      <tr>
+        <th>Name</th><th>Total Target Sets</th><th>Target Rest(secs)</th>
+      </tr>
+      <tr>
+        <td><%=text_field_tag "name", nil,  id: "new-exercise-name", class: "new-exercise-run"%></td>
+        <td><%=text_field_tag "sets", nil,  id: "new-exercise-sets", class: "new-exercise-run"%></td>
+        <td><%=text_field_tag 'Target Rest', nil,  id: "new-exercise-rest", class: "new-exercise-run"%></td>
+      </tr>
+    </table>
+</div>
+
+<div class="row">
+  <div id="cancel-new-exercise">
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+  <div id="new-exercise-button">
+    <button type="button" class="btn btn-primary" >Add and Start new Exercise</button>
+  </div>
+  <span id="start-new-exercise-button">
+    <button type="button" class="btn btn-success" value="Start Exercise">StartExercise</button>
+  </span>
+</div>
+
+
+
+</div>
