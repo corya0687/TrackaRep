@@ -53,11 +53,14 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
   end
 
+  def set_one_off_workout
+    @workout = Workout.new(one_off: true)
+    @workout.save
+  end
+
   def exercise_params
     params.require(:exercise).permit(:name, :description, :sets, :reps, :weight, :author_id, :rating, :rest_period, :equipment_needed, target_muscle_ids: [])
   end
-
-
 
   def user_not_authorized
     flash[:warning] = "You are not authorized to perform this action."
