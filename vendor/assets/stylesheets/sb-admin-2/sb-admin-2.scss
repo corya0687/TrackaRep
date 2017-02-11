@@ -201,11 +201,20 @@ a {
   box-sizing: border-box;
 }
 
+.new-exercise-run {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 #drill-fields table {
   width: 80%;
 }
 
-
+#new-exercise-button {
+  display: inline;
+}
 
 
 
@@ -272,6 +281,10 @@ margin: 2px;
   text-align: center;
   font-style: italic;
   font-size: 12px;
+}
+
+#new-exercise-button{
+  text-align: center;
 }
 
 #exercise-rest {

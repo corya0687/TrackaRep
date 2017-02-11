@@ -60,4 +60,7 @@ Bugs-
 
 ####Features
 1. Shows plate combination based off desired weight
-2.
+
+
+##Log
+1. make Start Exercise Button start new exercise on one off workout.
