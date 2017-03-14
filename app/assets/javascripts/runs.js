@@ -10,26 +10,42 @@ function attachRunListeners() {
   showWorkoutHeader();
 }
 
+function Run(id, type, drills, duration, workout){
+  this.id = id;
+  this.type = type;
+  this.drills = {};
+  this.duration = duration;
+  this.workout = workout
+}
+
 function setRunDataUrl() {
   $("#end-run").on('click',function (e) {
     var url = $(this).data("href")
     var data = {
       "run" : {
-        "duration" : duration_seconds
+        "duration" : duration_seconds,
+        "oneoff_name": wkHeader,
+        "drills_attributes" : currentRun.drills
         }
       }
-      updateRun(url, data);
+      createRun(url, data);
   })
 
 }
 
-function updateRun(url, data) {
+function createRun(url, data) {
   $.ajax({
+    type: 'POST',
     url: url,
-    type: 'PATCH',
-    dataType: 'javascript',
-    data: data
-  })
+    data: data,
+    dataType: 'json',
+    success:  function (data) {
+      window.location.pathname = 'users/'+data.user_id+'/runs/'+data.id;
+    },
+    error: function() {
+      console.log($.makeArray(arguments));
+    }
+  });
 }
 
 function editWorkout() {
@@ -41,7 +57,7 @@ function editWorkout() {
     $("#edit-workout-name").hide();
     $("#workout-run-input").show();
     $("#save-workout-name").show();
-    $("#workout-run-input").val(wkHeader)
+    $("#workout-run-input").val(wkHeader);
   });
 }
 
@@ -51,7 +67,7 @@ function showWorkoutHeader() {
     var wkInput = $("#workout-run-input").val();
     wkHeader = wkInput;
     $("#workout-run-input").hide();
-    $("#workout-header").text(wkInput)
+    $("#workout-header").text(wkInput);
     $("#workout-header").show();
     $("#edit-workout-name").show();
     $("#save-workout-name").hide();

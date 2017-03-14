@@ -65,10 +65,15 @@ Bugs-
 
 ####Features
 1. Shows plate combination based off desired weight
-2.
+2. Add ability for new set to be added, in timer.js commented out.
 
 
 ###Stories
 1. Need to figure out how to load each exercise in javascript to set and make it to where you can navigate.
-
 Trying to track index in workout exercises array.
+
+###log
+1. Need to fix runs index, decide on information i need to display for run. One off workout should be creating.
+2. muscle_group and target muscle in run
+3. edit run after run
+4. Target Muscle Id's

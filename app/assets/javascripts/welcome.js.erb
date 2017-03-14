@@ -12,20 +12,21 @@ function recentRuns() {
     if (user_id) {
       user_id = user_id.match(/\d+/)[0]
       $.get('/users/'+user_id+'/runs.json',function (response) {
-        console.log(response)
         runs = response;
         addRunsToWelcome(runs);
       });
     }
-
-
 }
 
-function Run(id, exercise, drills, duration) {
+function Run(id, exercise, drills, duration, run_date, currentWorkout, oneOffName, target_muscles) {
   this.exercise = exercise;
   this.id = id;
   this.drills = drills;
   this.duration = duration;
+  this.runDate = run_date;
+  this.workout = currentWorkout;
+  this.oneoff_name = oneOffName;
+  this.target_muscles = target_muscles;
 }
 
 Run.prototype.avgWeight = function () {
@@ -38,10 +39,9 @@ Run.prototype.avgWeight = function () {
   };
 
 
-
 function addRunsToWelcome(runs) {
   runs.forEach(function (run_data) {
-    var run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration)
+    var run = new Run(run_data.id, run_data.exercise, run_data.drills, run_data.duration, run_data.run_date, run_data.workout, run_data.oneoff_name, run_data.target_muscles);
     displayRun(run);
   });
 }
@@ -50,6 +50,15 @@ function add(a, b) {
   return a + b;
 }
 
+function tmList(runTargetMuscles) {
+  var muscles = []
+  for(var tm in runTargetMuscles){
+    muscles.push(runTargetMuscles[tm].name);
+  }
+  return muscles.join(", ")
+}
+
 function displayRun(run) {
-  $("#recent-runs").append("<tr id="+run.id+"><td>"+run.exercise.name+"</td><td>"+run.drills.length+"</td><td>"+run.avgWeight()+" lbs</td><td>"+run.duration+"</td></tr>")
+  var target_muscles = tmList(run.target_muscles)
+  $("#recent-runs").append("<tr id="+run.id+"><td><a href="+'runs/'+run.id+">"+run.oneoff_name+"</a><td>"+target_muscles+"</td></td><td>"+run.runDate+"</td><td>"+run.duration+"</td><td><a href="+'runs/'+run.id+" data-method='delete'>X</a></td></tr>")
 }

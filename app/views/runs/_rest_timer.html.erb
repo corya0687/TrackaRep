@@ -26,6 +26,15 @@
         <td><%=text_field_tag "sets", nil,  id: "new-exercise-sets", class: "new-exercise-run"%></td>
         <td><%=text_field_tag 'Target Rest', nil,  id: "new-exercise-rest", class: "new-exercise-run"%></td>
       </tr>
+      <tr>
+        <% TargetMuscle.all.each do |tm| %>
+          <td>
+            <%= check_box_tag 'tm_ids[]', tm.id, nil,  class: 'new-ex-tms'%>
+            <%= h tm.name -%>
+          </td>
+        <% end %>
+      </tr>
+
     </table>
 </div>
 

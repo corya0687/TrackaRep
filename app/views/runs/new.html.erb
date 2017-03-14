@@ -10,14 +10,16 @@
     </div>
 
     <div class="col-md-offset-10">
-      <a class="btn btn-danger" id="end-run" href=" <%=user_exercise_run_path(current_user, @exercise, @run)%>" data-href=" <%=user_exercise_run_path(current_user, @exercise, @run)%>">Finish</a>
+      <button class="btn btn-danger" href="<%= user_runs_path(current_user)%>" id="end-run" data-href= "<%= user_exercise_runs_path(current_user, @exercise)%>">Finish</button>
+
     </div>
   </div>
+
 
   <% if @workout %>
     <%=render partial: "workout_run" %>
   <%else%>
     <%=render partial: "set"%>
     <%=render partial: "rest_timer"%>
-    <%=render partial: "exercise_status"%>
+    <%=render partial: "exercise_status", locals: { drills: @run.drills }%>
   <% end %>

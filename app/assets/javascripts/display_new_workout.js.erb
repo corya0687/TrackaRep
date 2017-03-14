@@ -50,16 +50,6 @@ function removeMg(event) {
   });
 }
 
-function Exercise(id, name, sets, reps, rating, weight, rest_period) {
-  this.id = id;
-  this.name = name;
-  this.sets = sets;
-  this.reps = reps;
-  this.rating = rating;
-  this.weight = weight;
-  this.rest_period = rest_period;
-}
-
 function displayExercises() {
   $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
     var exercise_id = $(this).val()
@@ -99,7 +89,6 @@ $(".add-exercise-fields").on('click','.remove_nested_fields', function (event) {
     var exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0])
     var exercise = "workout_exercises_attributes_"
     var exJquery = "#"+exercise+exercise_id
-
     $("#exer-row-"+exercise_id).remove();
 
   });

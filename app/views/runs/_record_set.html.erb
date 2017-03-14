@@ -1,4 +1,4 @@
-<%=nested_form_for [current_user, @exercise, @run, @drill] do |f|%>
+<%=form_for @drill do |f|%>
 
 <table>
   <th>#</th>
@@ -16,7 +16,7 @@
     <td>Target</td>
     <td><%=@exercise.weight%></td>
     <td><%=@exercise.reps%></td>
-    <td id="new-set-button"><%=f.submit 'New Set', class: "btn btn-primary"%></td>
+    <!-- <td id="new-set-button"><%=f.submit 'New Set', class: "btn btn-primary"%></td> -->
 
   </tr>
 

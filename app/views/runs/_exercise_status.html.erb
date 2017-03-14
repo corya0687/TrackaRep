@@ -14,9 +14,9 @@
             </tr>
         </thead>
         <tbody>
-          <%if @run.drills.size > 0%>
-            <%@run.drills.each do |drill|%>
-            <tr><td><%=drill.set_number%></td><td> <%=drill.weight%></td><td><%=drill.reps%></td><td><%=drill.rest_period%></td><td></td></tr>
+          <%if drills.size > 0%>
+            <%drills.each do |drill|%>
+            <tr><td><%=drill.exercise_name%></td><td><%=drill.set_number%></td><td> <%=drill.weight%></td><td><%=drill.reps%></td><td><%=drill.rest_period%></td><td></td></tr>
             <%end%>
           <%end%>
         </tbody>

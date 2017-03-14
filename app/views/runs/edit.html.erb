@@ -1,0 +1,18 @@
+<h2 class='page-header'>Correct Run </h2>
+<%= bootstrap_form_for @run do |f| %>
+<%= f.text_field :oneoff_name %>
+<table>
+  <%= f.fields_for :drills  do |drill_fields|%>
+  <tr>
+    <td><%= drill_fields.text_field :exercise_name, class: "table-inputs"%></td>
+    <%= drill_fields.hidden_field :id %>
+    <td><%= drill_fields.text_field :weight, class: "table-inputs"%></td>
+    <td><%= drill_fields.text_field :set_number, class: "table-inputs"%></td>
+    <td><%= drill_fields.text_field :reps, class: "table-inputs"%></td>
+    <td><%= drill_fields.text_field :rest_period, class: "table-inputs"%></td>
+  </tr>
+
+  <% end %>
+</table>
+<%= f.submit 'Update' %>
+<% end %>

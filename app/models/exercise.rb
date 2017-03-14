@@ -21,6 +21,7 @@ class Exercise < ActiveRecord::Base
     {1=>100, 2=>95, 3=>93, 4=>90, 5=>87, 6=>85, 7=>83, 8=>80, 9=>77, 10=>75, 11=>72, 12=>70 }
   end
 
+
   def self.most_popular
     order(:rating).last
   end
