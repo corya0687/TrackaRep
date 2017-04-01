@@ -27,7 +27,6 @@ class RunsController < ApplicationController
 
   def create
     @run = Run.new(run_params)
-    binding.pry
     @run.user_id = current_user.id
     if @run.valid?
       @run.save

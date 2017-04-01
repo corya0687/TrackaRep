@@ -277,6 +277,8 @@ var weightInput;
 var repInput;
 var restInput;
 var actualRestTime = 0;
+var restBeep = new Audio('/assets/Beep.mp3')
+var startBeep = new Audio ('/assets/start-bell.mp3')
 
 function durationTimer() {
   duration_seconds = 0;
@@ -287,9 +289,11 @@ function swapTimerSet() {
   if ($("#rest-timer-all").is(":hidden")) {
     $("#rest-timer-all").show();
     $("#run-main").hide();
+
   } else if($("#run-main").is(":hidden")) {
     $("#rest-timer-all").hide();
     $("#run-main").show();
+    startBeep.play();
     removeRestLisners();
   }
 }
@@ -331,6 +335,24 @@ function countDown() {
   } else {
     $('#rest-timer').html(minutes + ":" + remainingSeconds);
     actualRestTime++;
+    if (rest_seconds < 5){
+
+      if(restBeep.duration > 0 && !restBeep.paused){
+
+                //already playing
+                restBeep.pause();
+                restBeep.currentTime = 0;
+                restBeep.play();
+
+            }else{
+
+                //not playing
+
+                restBeep.play();    
+
+            }
+    }
+
     rest_seconds--;
   }
 }
