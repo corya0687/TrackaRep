@@ -135,7 +135,6 @@ function incrementSet() {
       $("#weight-input").val("")
       $("#rep-input").val("")
     }else{
-      debugger;
     recordLastSet();
     $('#end-run').trigger('click');
     }
@@ -336,21 +335,13 @@ function countDown() {
     $('#rest-timer').html(minutes + ":" + remainingSeconds);
     actualRestTime++;
     if (rest_seconds < 5){
-
       if(restBeep.duration > 0 && !restBeep.paused){
-
-                //already playing
-                restBeep.pause();
-                restBeep.currentTime = 0;
-                restBeep.play();
-
-            }else{
-
-                //not playing
-
-                restBeep.play();    
-
-            }
+        restBeep.pause();
+        restBeep.currentTime = 0;
+        restBeep.play();
+      }else{
+        restBeep.play();
+      }
     }
 
     rest_seconds--;

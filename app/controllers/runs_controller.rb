@@ -6,7 +6,7 @@ class RunsController < ApplicationController
   end
 
   def index
-    @runs = current_user.runs
+    @runs = current_user.runs.order(:created_at => :desc)
     @last_five_runs = Run.order(created_at: :desc).limit(5)
     respond_to do |format|
       format.html

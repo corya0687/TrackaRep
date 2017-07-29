@@ -7,7 +7,7 @@ class Run < ActiveRecord::Base
   has_many :drills, dependent: :destroy
 
   after_create :update_run_date
-
+  attr_accessor :to_time
   accepts_nested_attributes_for :drills, :reject_if => :all_blank, :allow_destroy => true
 
   def drills_attributes=(drills_json)
@@ -22,6 +22,10 @@ class Run < ActiveRecord::Base
         a = self.drills.build(drill)
       end
     end
+  end
+
+  def to_time
+    Time.at(duration.to_i).utc.strftime("%H:%M:%S")
   end
 
   def set_target_muscles(drills_json)
