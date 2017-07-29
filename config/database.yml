@@ -11,12 +11,12 @@ development:
 
 test:
   <<: *default
-  database: db/trackarep_test
+  database: trackarep_test
 
 staging:
   <<: *default
-  database: db/trackarep_staging
+  database: trackarep_staging
 
 production:
   <<: *default
-  database: db/trackarep_production
+  database: trackarep_production
