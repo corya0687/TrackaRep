@@ -3,11 +3,11 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
-  
+
 
 development:
   <<: *default
-  database: db/trackarep_development
+  database: trackarep_development
 
 test:
   <<: *default
