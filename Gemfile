@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 gem 'therubyracer'
 gem 'rails-i18n'
 gem 'capistrano-rails', group: :development
+gem 'rails-erd'
 
 group :development, :test do
   gem 'byebug'
@@ -44,6 +45,6 @@ group :development do
   gem 'pry'
   gem 'unicorn'
   gem 'unicorn-rails'
-
+  gem 'rubocop', require: false
   gem 'spring'
 end
