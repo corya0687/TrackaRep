@@ -1,17 +1,15 @@
-<%@runs.each do |run|%>
-<table class="table">
-  <tr>
-      <%=run.workout.name%>
-    <th>
-      Date: <%=run.run_date%>
-    </th>
-  </tr>
-<tr>
-  <th>
-    Exercise Name:
-  </th>
-</tr>
 
-</table>
-
-<%end%>
+  <table class="table table-responsive">
+  <thead>
+      <th> Name </th><th> Muscles </th><th><%= t "welcome.runs.date"%></th><th><%= t "welcome.runs.duration"%></th>
+      <th>Delete</th>
+  </thead>
+    <%@runs.each do |run|%>
+      <tr>
+        <td><%= link_to run.oneoff_name, run %></td>
+        <td><%=run.target_muscles.map(&:name).join(", ") %></td>
+        <td><%= run.run_date  %></td>
+        <td><%= run.to_time  %></td>
+      </tr>
+    <%end%>
+  </table>

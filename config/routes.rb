@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
     end
 
-   resources :runs, only: [:show, :edit, :update, :destroy]
+   resources :runs, only: [:index, :show, :edit, :update, :destroy]
    resources :workouts, only: [:index, :show]
    resources :exercises, only: [:index, :show]
    get 'index', to: 'welcome#index'
