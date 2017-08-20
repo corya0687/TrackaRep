@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-
-gem 'rails', '=5.0.1'
+gem 'rails', '=5.0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -17,7 +16,6 @@ gem 'pry'
 gem 'bootstrap_form'
 gem 'nested_form'
 gem 'pg'
-# Use ActiveModel has_secure_password
 gem 'active_model_serializers'
 gem 'haml-rails'
 gem 'bcrypt', '~> 3.1.7'
@@ -28,12 +26,12 @@ gem 'therubyracer'
 gem 'rails-i18n'
 gem 'capistrano-rails', group: :development
 gem 'rails-erd'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry'
-  gem 'rspec-rails'
-  gem 'sqlite3'
+  gem 'factory_girl_rails'
 end
 
 group :production do
@@ -42,7 +40,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'pry'
   gem 'unicorn'
   gem 'unicorn-rails'
   gem 'rubocop', require: false

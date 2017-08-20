@@ -21,8 +21,8 @@ module Yoked
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.time_zone_aware_types = [:datetime, :time]
     config.time_zone = 'Eastern Time (US & Canada)'
     config.i18n.fallbacks = true
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
