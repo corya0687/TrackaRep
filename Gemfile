@@ -28,10 +28,20 @@ gem 'capistrano-rails', group: :development
 gem 'rails-erd'
 gem 'httparty'
 
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'minitest-spec-rails'
+  gem 'shoulda'
+  gem 'mocha', :require => false
+  gem 'timecop', '~> 0.8.1'
+  gem 'tiny_xml_builder'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'minitest-rails-capybara'
 end
 
 group :production do
