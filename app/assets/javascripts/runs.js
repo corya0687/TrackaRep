@@ -20,14 +20,14 @@ function Run(id, type, drills, duration, workout){
 
 function setRunDataUrl() {
   $("#end-run").on('click',function (e) {
-    var url = $(this).data("href")
-    var data = {
+    var url = $(this).data("href"),
+      data = {
       "run" : {
         "duration" : duration_seconds,
         "oneoff_name": wkHeader,
         "drills_attributes" : currentRun.drills
         }
-      }
+      };
       createRun(url, data);
   })
 

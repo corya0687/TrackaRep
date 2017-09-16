@@ -52,8 +52,8 @@ function removeMg(event) {
 
 function displayExercises() {
   $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
-    var exercise_id = $(this).val()
-    var form_exer = $("#form-exercises").html()
+    var exercise_id = $(this).val(),
+      form_exer = $("#form-exercises").html();
     if(event.currentTarget.checked === false){
       removeExercise(event);
     } else {
@@ -67,15 +67,15 @@ function displayExercises() {
 }
 
 function removeExercise(event) {
-    $("#exer-row-" + event.currentTarget.value).remove();
+  $("#exer-row-" + event.currentTarget.value).remove();
 }
 
 function displayNewExercises() {
   $(".add-exercise-fields").on('focusout','[id^="workout_exercises_attributes"]', function (event) {
-    var exercise_id = parseInt(this.id.match(/\d+/g)[0])
-    var exercise = "workout_exercises_attributes_"
-    var exJquery = "#"+exercise+exercise_id
-    var form_exer = $("#form-exercises").html()
+    var exercise_id = parseInt(this.id.match(/\d+/g)[0]),
+      exercise = "workout_exercises_attributes_",
+      exJquery = "#"+exercise+exercise_id,
+      form_exer = $("#form-exercises").html();
     if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
       $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+$(exJquery+"_name").val()+"</td><td></td><td>"+$(exJquery+"_sets").val()+"</td><td>"+$(exJquery+"_weight").val()+"</td><td>"+$(exJquery+"_reps").val()+"</td><td>"+$(exJquery+"_rest_period").val()+"</td></tr>")
     } else {
@@ -86,9 +86,9 @@ function displayNewExercises() {
 
 function removeNewExercise() {
 $(".add-exercise-fields").on('click','.remove_nested_fields', function (event) {
-    var exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0])
-    var exercise = "workout_exercises_attributes_"
-    var exJquery = "#"+exercise+exercise_id
+    var exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0]),
+     exercise = "workout_exercises_attributes_",
+     exJquery = "#"+exercise+exercise_id;
     $("#exer-row-"+exercise_id).remove();
 
   });

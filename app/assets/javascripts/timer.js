@@ -168,11 +168,11 @@ function incrementExercise(){
 }
 
 function captureSetData() {
-  exerciseName = $("#set-exercise-name").text()
-  setNumber = $("#current-set").text()
-  weightInput = $("#weight-input").val()
-  repInput = $("#rep-input").val()
-  targetMuscleIds = currentExercise.target_muscle_ids
+  exerciseName = $("#set-exercise-name").text();
+  setNumber = $("#current-set").text();
+  weightInput = $("#weight-input").val();
+  repInput = $("#rep-input").val();
+  targetMuscleIds = currentExercise.target_muscle_ids;
 }
 
 
@@ -193,8 +193,8 @@ function Workout(id = '', name = '', description = '', exercises = [], one_off =
 }
 
 function loadWorkout() {
-  var url = $("html")[0].baseURI
-  var url = url.split("workouts/")
+  var url = $("html")[0].baseURI,
+    url = url.split("workouts/");
   pickWorkoutType(url);
 }
 
@@ -212,8 +212,8 @@ function pickWorkoutType(url) {
 }
 
   function loadExercise(workout, oneOffUrl) {
-    var exerciseUrl = oneOffUrl.split('/exercises')
-    var exercise_id = exerciseUrl[1].match(/\d+/)[0];
+    var exerciseUrl = oneOffUrl.split('/exercises'),
+      exercise_id = exerciseUrl[1].match(/\d+/)[0];
     $.get("/exercises/" +exercise_id+ ".json", function ( data ) {
       var tmOldIds = data.target_muscles.map(function (e) {
         return e.id
@@ -266,18 +266,18 @@ function addDrillToRun(event) {
   currentRun.drills[drillNum] = drill;
 }
 
-var rest_seconds;
-var duration_seconds
-var countUp;
-var countDown;
-var setRestTimer;
-var setNumber;
-var weightInput;
-var repInput;
-var restInput;
-var actualRestTime = 0;
-var restBeep = new Audio('/assets/Beep.mp3')
-var startBeep = new Audio ('/assets/start-bell.mp3')
+var rest_seconds,
+  duration_seconds,
+  countUp,
+  countDown,
+  setRestTimer,
+  setNumber,
+  weightInput,
+  repInput,
+  restInput,
+  actualRestTime = 0,
+  restBeep = new Audio('/assets/Beep.mp3'),
+  startBeep = new Audio ('/assets/start-bell.mp3');
 
 function durationTimer() {
   duration_seconds = 0;
@@ -309,8 +309,8 @@ function restTimer() {
 }
 
 function countUp() {
-  var minutes = Math.round((duration_seconds - 30)/60)
-  var remainingSeconds = duration_seconds % 60;
+  var minutes = Math.round((duration_seconds - 30)/60),
+    remainingSeconds = duration_seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
@@ -320,8 +320,8 @@ function countUp() {
 
 // rest_timer - pull time from exercise, grab id from url.
 function countDown() {
-  var minutes = Math.round((rest_seconds - 30)/60)
-  var remainingSeconds = rest_seconds % 60;
+  var minutes = Math.round((rest_seconds - 30)/60),
+    remainingSeconds = rest_seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
@@ -363,8 +363,8 @@ function shorten15Secs () {
 }
 
 function setTimerVars(seconds) {
-  var minutes = Math.round((seconds - 30)/60)
-  var remainingSeconds = seconds % 60;
+  var minutes = Math.round((seconds - 30)/60),
+    remainingSeconds = seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
