@@ -40,6 +40,14 @@ class ActionDispatch::IntegrationTest
   include Capybara::Minitest::Assertions
   include FactoryGirl::Syntax::Methods
   Devise::Test::IntegrationHelpers
+  Capybara.ignore_hidden_elements = false
+
+  def login_user(user)
+    visit new_user_session_path
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
+    click_on 'Login'
+  end
 
   # Reset sessions and driver between tests
   # Use super wherever this method is redefined in your individual test classes
