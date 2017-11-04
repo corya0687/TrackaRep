@@ -11,4 +11,3 @@ class Wger
   end
 
 end
-basket = basket.includes(:apples).where('apple_id == ? or baskets.variety is null', 0,)
