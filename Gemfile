@@ -27,6 +27,7 @@ gem 'rails-i18n'
 gem 'capistrano-rails', group: :development
 gem 'rails-erd'
 gem 'httparty'
+gem 'browserify-rails'
 
 
 group :development, :test do

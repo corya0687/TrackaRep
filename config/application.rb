@@ -21,6 +21,7 @@ module TrackARep
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.browserify_rails.paths << /vendor\/assets\/javascripts\/module\.js/
     config.active_record.time_zone_aware_types = [:datetime, :time]
     config.time_zone = 'Eastern Time (US & Canada)'
     config.i18n.fallbacks = true
