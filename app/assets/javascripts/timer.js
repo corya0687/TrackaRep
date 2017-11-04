@@ -326,6 +326,9 @@ function countDown() {
     remainingSeconds = "0" + remainingSeconds;
   }
   if (rest_seconds < 0) {
+    if ($('#start-new-exercise-button').is(":visible")) {
+      $('#start-new-exercise-button').trigger("click")
+    }
     swapTimerSet();
     incrementSet();
     clearInterval(setRestTimer);
