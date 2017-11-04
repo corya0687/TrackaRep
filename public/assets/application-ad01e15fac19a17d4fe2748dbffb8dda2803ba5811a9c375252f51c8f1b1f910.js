@@ -18567,14 +18567,14 @@ function Run(id, type, drills, duration, workout){
 
 function setRunDataUrl() {
   $("#end-run").on('click',function (e) {
-    var url = $(this).data("href")
-    var data = {
+    var url = $(this).data("href"),
+      data = {
       "run" : {
         "duration" : duration_seconds,
         "oneoff_name": wkHeader,
         "drills_attributes" : currentRun.drills
         }
-      }
+      };
       createRun(url, data);
   })
 
@@ -18682,9 +18682,9 @@ function tmList(runTargetMuscles) {
 }
 
 function displayRun(run) {
-  var target_muscles = tmList(run.target_muscles)
-  var mins = Math.round(run.duration/60)
-  var secs = run.duration % 60
+  var target_muscles = tmList(run.target_muscles),
+    mins = Math.round(run.duration/60),
+    secs = run.duration % 60;
   secs = secs < 10 ? "0" + secs : secs
   $("#recent-runs").append("<tr id="+run.id+"><td><a href="+'runs/'+run.id+">"+run.oneoff_name+"</a><td>"+target_muscles+"</td></td><td>"+run.runDate+"</td><td>"+mins+":"+secs+"</td><td><a href="+'runs/'+run.id+" data-method='delete'>X</a></td></tr>")
 }
@@ -18859,11 +18859,11 @@ function incrementExercise(){
 }
 
 function captureSetData() {
-  exerciseName = $("#set-exercise-name").text()
-  setNumber = $("#current-set").text()
-  weightInput = $("#weight-input").val()
-  repInput = $("#rep-input").val()
-  targetMuscleIds = currentExercise.target_muscle_ids
+  exerciseName = $("#set-exercise-name").text();
+  setNumber = $("#current-set").text();
+  weightInput = $("#weight-input").val();
+  repInput = $("#rep-input").val();
+  targetMuscleIds = currentExercise.target_muscle_ids;
 }
 
 
@@ -18884,8 +18884,8 @@ function Workout(id = '', name = '', description = '', exercises = [], one_off =
 }
 
 function loadWorkout() {
-  var url = $("html")[0].baseURI
-  var url = url.split("workouts/")
+  var url = $("html")[0].baseURI,
+    url = url.split("workouts/");
   pickWorkoutType(url);
 }
 
@@ -18903,8 +18903,8 @@ function pickWorkoutType(url) {
 }
 
   function loadExercise(workout, oneOffUrl) {
-    var exerciseUrl = oneOffUrl.split('/exercises')
-    var exercise_id = exerciseUrl[1].match(/\d+/)[0];
+    var exerciseUrl = oneOffUrl.split('/exercises'),
+      exercise_id = exerciseUrl[1].match(/\d+/)[0];
     $.get("/exercises/" +exercise_id+ ".json", function ( data ) {
       var tmOldIds = data.target_muscles.map(function (e) {
         return e.id
@@ -18957,18 +18957,18 @@ function addDrillToRun(event) {
   currentRun.drills[drillNum] = drill;
 }
 
-var rest_seconds;
-var duration_seconds
-var countUp;
-var countDown;
-var setRestTimer;
-var setNumber;
-var weightInput;
-var repInput;
-var restInput;
-var actualRestTime = 0;
-var restBeep = new Audio('/assets/Beep.mp3')
-var startBeep = new Audio ('/assets/start-bell.mp3')
+var rest_seconds,
+  duration_seconds,
+  countUp,
+  countDown,
+  setRestTimer,
+  setNumber,
+  weightInput,
+  repInput,
+  restInput,
+  actualRestTime = 0,
+  restBeep = new Audio('/assets/Beep.mp3'),
+  startBeep = new Audio ('/assets/start-bell.mp3');
 
 function durationTimer() {
   duration_seconds = 0;
@@ -19000,8 +19000,8 @@ function restTimer() {
 }
 
 function countUp() {
-  var minutes = Math.round((duration_seconds - 30)/60)
-  var remainingSeconds = duration_seconds % 60;
+  var minutes = Math.round((duration_seconds - 30)/60),
+    remainingSeconds = duration_seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
@@ -19011,12 +19011,15 @@ function countUp() {
 
 // rest_timer - pull time from exercise, grab id from url.
 function countDown() {
-  var minutes = Math.round((rest_seconds - 30)/60)
-  var remainingSeconds = rest_seconds % 60;
+  var minutes = Math.round((rest_seconds - 30)/60),
+    remainingSeconds = rest_seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
   if (rest_seconds < 0) {
+    if ($('#start-new-exercise-button').is(":visible")) {
+      $('#start-new-exercise-button').trigger("click")
+    }
     swapTimerSet();
     incrementSet();
     clearInterval(setRestTimer);
@@ -19054,8 +19057,8 @@ function shorten15Secs () {
 }
 
 function setTimerVars(seconds) {
-  var minutes = Math.round((seconds - 30)/60)
-  var remainingSeconds = seconds % 60;
+  var minutes = Math.round((seconds - 30)/60),
+    remainingSeconds = seconds % 60;
   if (remainingSeconds < 10) {
     remainingSeconds = "0" + remainingSeconds;
   }
@@ -19117,8 +19120,8 @@ function removeMg(event) {
 
 function displayExercises() {
   $('#exercise-table').on('click','[id^="workout_exercise_ids"]',function(event) {
-    var exercise_id = $(this).val()
-    var form_exer = $("#form-exercises").html()
+    var exercise_id = $(this).val(),
+      form_exer = $("#form-exercises").html();
     if(event.currentTarget.checked === false){
       removeExercise(event);
     } else {
@@ -19132,15 +19135,15 @@ function displayExercises() {
 }
 
 function removeExercise(event) {
-    $("#exer-row-" + event.currentTarget.value).remove();
+  $("#exer-row-" + event.currentTarget.value).remove();
 }
 
 function displayNewExercises() {
   $(".add-exercise-fields").on('focusout','[id^="workout_exercises_attributes"]', function (event) {
-    var exercise_id = parseInt(this.id.match(/\d+/g)[0])
-    var exercise = "workout_exercises_attributes_"
-    var exJquery = "#"+exercise+exercise_id
-    var form_exer = $("#form-exercises").html()
+    var exercise_id = parseInt(this.id.match(/\d+/g)[0]),
+      exercise = "workout_exercises_attributes_",
+      exJquery = "#"+exercise+exercise_id,
+      form_exer = $("#form-exercises").html();
     if (form_exer.indexOf("exer-row-"+exercise_id) < 0) {
       $("#form-exercises").append("<tr id=exer-row-"+exercise_id+"><td>"+$(exJquery+"_name").val()+"</td><td></td><td>"+$(exJquery+"_sets").val()+"</td><td>"+$(exJquery+"_weight").val()+"</td><td>"+$(exJquery+"_reps").val()+"</td><td>"+$(exJquery+"_rest_period").val()+"</td></tr>")
     } else {
@@ -19151,9 +19154,9 @@ function displayNewExercises() {
 
 function removeNewExercise() {
 $(".add-exercise-fields").on('click','.remove_nested_fields', function (event) {
-    var exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0])
-    var exercise = "workout_exercises_attributes_"
-    var exJquery = "#"+exercise+exercise_id
+    var exercise_id = parseInt(event.target.previousElementSibling.id.match(/\d+/g)[0]),
+     exercise = "workout_exercises_attributes_",
+     exJquery = "#"+exercise+exercise_id;
     $("#exer-row-"+exercise_id).remove();
 
   });
