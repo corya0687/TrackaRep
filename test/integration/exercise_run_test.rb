@@ -16,14 +16,11 @@ class ExerciseRunTest < ActionDispatch::IntegrationTest
     end
 
     should 'record set' do
-
       click_on 'Exercises'
       click_on "#{@exercise.name}_run".downcase
       fill_in 'weight-input', with: 150
       fill_in 'rep-input', with: 8
-      binding.pry
       click_on 'End Set'
-
     end
   end
 
