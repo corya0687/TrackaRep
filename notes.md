@@ -1,79 +1,18 @@
+##TODO
+##Refactor api to handle multiple clients
+1. write unit test for models and controllers
+2. add body weight attr to exercise
+2. refactor controllers to return json
+3. rack cors, white list origins
 
+##WEB Front END
+4. create front end react client
+5. add redux
+6. mirror existing functionality on prod
+7. test
+8. fix workout model
+9. redesign/add animations ##POSE library, D3?
 
-User:    Associations, username, role
-  has admin, coach, user
-Plan: Has_many_workout plans
-start_date, end_date, description, name
-Jointable(Workout_Plan): belongs to Plan, belongs to workout
-Workout:
-has_many exercises name, description, type(upper lower etc)
-Exercise: belongs to user.
-name, has_many workouts, reps, rest period, description, muscle_group(biceps etc),
-
-Permissions -
-All Exercises are default viewable.
-Admin can manage all resources
-Coaches can edit user plans where they have been added as a coach,
- Only author, admins and user coaches can edit exercises.
-
-1. ###Create models and associations###
-Auto complete for muscle groups for exercises and type of workouts.
-
-2.### Setup login/log out/sign up, home page and profile.###
-
-3. ###Setup exercise controller and views- Allow full crud on### exercises.
-
-Search for video on youtube and pic for muscle group automatically for exercises
-Let user build custom workout with drop downs
-
-
-#### Yoked 2.0 JQuery and Dashboard Functionality add. ###
-1. Integrate SB Admin 2 Dashboard Theme
-  -- Done
-2. New workouts Page/Edit, New Exercise Page/Edit
-  -- Done
-4. Make sure all forms are working.
-  -- Done
-5. Build Run feature.
-  Models:
-
-  Run
-  TotalDuration type asets areps aweight arest Completed_date
-
-  Timer
-  name secs
-    Associations: belongs_to Run
-
-  Run(@spartan_workout)
-  timer(exercise_rest_period)
-
-  Sprint Log-- currently working on getting exercise to run correctly, set is counting.
-
- Then create Form
-6. Build index page.
-7. Workout associate with runs
-8. Run creates a workout name of "ONE OFF" if no workout is specified.
-9. Also any "One off Exercises" ran within 3 hours of eachother automatically fall under the same oneOff workout.
-
-Bugs-
-1. Edit and New w validation errors workout forms-
- i. Field should have better way of avoiding fields_for exercises populating incorrectly on the edit and new page.
-
- ii.Check boxes in table not responding to workout js in right  -side panel div
-
- iii. Currently using hidden fields for associations in forms, should be done in controller. Or by using correct objects in forms
-
-####Features
-1. Shows plate combination based off desired weight
-2. Add ability for new set to be added, in timer.js commented out.
-
-
-###Stories
-1. Need to figure out how to load each exercise in javascript to set and make it to where you can navigate.
-Trying to track index in workout exercises array.
-
-###log
-1. Need to fix runs index, decide on information i need to display for run. One off workout should be creating.
-2. muscle_group and target muscle in run
-3. edit run after run
-4. Target Muscle Id's
+## Port to react Native
+9. sketch web redesign
+10. get all features working on android.

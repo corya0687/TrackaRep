@@ -4,7 +4,6 @@ class Drill < ActiveRecord::Base
 
   attr_accessor :target_muscle_ids
 
-
   def set_exercise(name)
     exercise = Exercise.find_or_create_by(name)
     self.exercise = exercise
