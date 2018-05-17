@@ -1,5 +1,5 @@
 class WorkoutsController < ApplicationController
-  before_filter :set_workout, :except => [:index, :new, :create]
+  before_action :set_workout, :except => [:index, :new, :create]
   def index
     @upper_body = MuscleGroup.find_by(name: "UpperBody").try(:workouts)
     @core_body = MuscleGroup.find_by(name: "Core").try(:workouts)

@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_filter :set_exercise, :except => [:index, :new, :create]
+  before_action :set_exercise, :except => [:index, :new, :create]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
