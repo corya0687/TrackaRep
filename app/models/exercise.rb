@@ -7,10 +7,15 @@ class Exercise < ActiveRecord::Base
   has_many :target_muscles, :through => :exercise_target_muscles
   has_many :runs
   validates :name, presence: true, length: { minimum: 2, maximum: 25 }
-  #validates :description, presence: true, length: { minimum: 8, maximum: 100 } unless :description.nil?
-#  validates :reps, numericality: { only_integer: true } unless :reps.nil?
-#  validates :rest_period, numericality: { only_integer: true }
-  #validates :sets, numericality: { only_integer: true }
+  validates :description, presence: true, length: { minimum: 8, maximum: 100 } if :description.present?
+  validates :reps, :is_integer?
+  validates :rest_period, :is_integer?
+  validates :sets, :is_integer?
+
+  def is_integer?(value)
+    return true unless value.present?
+    value.class = Integer
+  end
 
   def percentage_to_max
       "#{coefficents[self.reps]}%"

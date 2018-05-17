@@ -18,8 +18,9 @@ FactoryGirl.define do
 
   factory :run do
     exercise
-
+    sets 1
     factory :run_with_drills do
+      id 1
       after(:create) do |run|
         create_list(:drill, 2, run: run )
       end
