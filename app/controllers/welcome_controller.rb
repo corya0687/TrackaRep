@@ -17,4 +17,9 @@ class WelcomeController < ApplicationController
       redirect_to index_path
     end
   end
+
+  def letsencrypt
+    # use your code here, not mine
+    render text: "fR0nrXUPJP0O8Zu43G2fhQ7TQVxLxxOTYiSgVpK-ano.kkTmr4MRCRll9jWpvJxkZYdzyAzwuTmHPKX6S3a3WiU"
+  end
 end
