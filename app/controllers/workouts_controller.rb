@@ -33,7 +33,6 @@ class WorkoutsController < ApplicationController
       redirect_to workout_path(@workout)
     else
       @exercise_pages = Exercise.paginate(page: params[:page], per_page: 8)
-
       render 'new'
     end
   end

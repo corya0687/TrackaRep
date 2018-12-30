@@ -39,7 +39,6 @@ class ExerciseTest < ActiveSupport::TestCase
     assert exercise_1.valid? === false
     exercise_1.save
     assert exercise_1.errors.messages[:description].first == "is too short (minimum is 8 characters)"
-
   end
 
   should 'be invalid with a description more than 100 characters' do
@@ -54,19 +53,21 @@ class ExerciseTest < ActiveSupport::TestCase
   end
 
   should 'be invalid if reps are not a number or nil' do
-
+    exercise_1 = build(:exercise, { reps:'hotsauce'})
+    assert exercise_1.valid? === false
+    assert exercise_1.errors.messages[:reps].first == "must be an integer"
   end
 
   should 'be invalid if rest_period is not a number or nil' do
-
+    exercise_1 = build(:exercise, { rest_period:'hotsauce'})
+    assert exercise_1.valid? === false
+    assert exercise_1.errors.messages[:rest_period].first == "must be an integer"
   end
 
   should 'be invalid if sets is not a number or nil' do
-
+    exercise_1 = build(:exercise, { sets:'hotsauce'})
+    assert exercise_1.valid? === false
+    assert exercise_1.errors.messages[:sets].first == "must be an integer"
   end
-  #validates :name, presence: true, length: { minimum: 2, maximum: 60 }
-  #validates :description, presence: true, length: { minimum: 8, maximum: 100 } unless :description.nil?
-  #validates :reps, numericality: { only_integer: true } unless :reps.nil?
-  #validates :rest_period, numericality: { only_integer: true }
-  #validates :sets, numericality: { only_integer: true }
+
 end

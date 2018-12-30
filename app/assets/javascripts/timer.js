@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  attachRunListners();
+  attachTimerListners();
 })
 
 var workout;
@@ -7,7 +7,7 @@ var currentExercise;
 var exerciseIndex;
 var exercises;
 
-function attachRunListners() {
+function attachTimerListners() {
   loadWorkout();
   startExercise();
   endSet();
@@ -58,7 +58,7 @@ function toggleNewExerciseTable() {
 function startExercise() {
   $("#start-run").on('click', function functionName() {
     durationTimer();
-    currentRun = new Run('','', {}, 0,'');
+    currentRun = new Run('','', {}, 0,'')
     $("#drill-fields").removeClass("drill-fields-pause")
     $("#drill-fields").toggleClass("drill-fields")
     $("#start-run").addClass("cant-click");
@@ -95,7 +95,6 @@ function startNewExerciseListener() {
     captureNewExercise();
     emptyNewExercise();
     exercise = new Exercise('', newExerciseName, newExerciseSets, '', '', newExerciseRest, true, newExerciseTmIds);
-    console.log('New Exercise')
     workout.exercises.push(exercise);
     rest_seconds = 0;
     hideNewExerciseFields();
@@ -184,14 +183,6 @@ function fillStatus() {
   $("#exercise-status-table tbody").append("<tr><td>"+exerciseName+"</td><td>"+setNumber+"</td><td>"+weightInput+"</td><td>"+repInput+"</td><td>"+restInput+"</td><td></td></tr>")
 }
 
-function Workout(id = '', name = '', description = '', exercises = [], one_off = false){
-  this.id = id;
-  this.name = name;
-  this.description = description;
-  this.exercises = exercises;
-  this.one_off = one_off;
-}
-
 function loadWorkout() {
   var url = $("html")[0].baseURI,
     url = url.split("workouts/");
@@ -228,7 +219,7 @@ function getWorkout(url) {
   var workout_id = url[1].match(/\d+/)[0];
   $.get("/workouts/" +workout_id+ ".json", function ( data ) {
     workout = new Workout(data.id, data.name, data.description, data.exercises)
-    currentRun.workout = workout;
+    currentRun = new Run('','', {}, 0,workout)
     exerciseIndex = 0;
     currentExercise = workout.exercises[exerciseIndex];
   });
@@ -245,25 +236,9 @@ function Exercise(id, name, sets = 1, reps, weight, rest_period, one_off, tmIds)
   this.target_muscle_ids = tmIds;
 }
 
-function Drill(set_number, weight, reps, rest_period, exercise_name, target_muscle_ids) {
-  this.set_number = set_number;
-  this.weight = weight;
-  this.reps = reps;
-  this.rest_period = rest_period;
-  this.exercise_name = exercise_name;
-  this.target_muscle_ids = target_muscle_ids;
-}
-
 function displayExercise() {
   $("#set-exercise-name").text(currentExercise.name);
   $("#current-set").text(1);
-}
-
-function addDrillToRun(event) {
-  console.log('addDrillToRun:'+ currentExercise.target_muscle_ids)
-  drill  = new Drill(setNumber, weightInput, repInput, restInput, exerciseName, targetMuscleIds);
-  drillNum = Object.keys(currentRun.drills).length + 1;
-  currentRun.drills[drillNum] = drill;
 }
 
 var rest_seconds,

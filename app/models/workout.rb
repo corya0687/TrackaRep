@@ -69,7 +69,4 @@ class Workout < ActiveRecord::Base
     end
   end
 
-
-
-
 end
