@@ -1,7 +1,0 @@
-<%=exercise_form.text_field :name, label: "Name"%>
-<%=exercise_form.text_field :sets, class: "table-inputs", label: "#{t "workouts.add_exercises.sets"}", inline: true%>
-<%=exercise_form.text_field :weight, class: "table-inputs", label: "#{t "workouts.add_exercises.weight"}"%>
-<%=exercise_form.text_field :reps, class: "table-inputs", label: "#{t "workouts.add_exercises.reps"}"%>
-<%=exercise_form.text_field :rest_period, class: "table-inputs", label: "#{t "workouts.add_exercises.rest"}"%>
-<%=exercise_form.hidden_field :author_id, :value => current_user.id%>
-<%= exercise_form.link_to_remove "#{t "workouts.add_exercises.remove"}" %>
